@@ -9,34 +9,29 @@
 <title>Update user</title>
 </head>
 <body>
+	<jsp:include page="../header.jsp"></jsp:include>
+	<div class="formInsertUser">
+		<h1>Sửa thông tin tài khoản</h1>
+		<br /> <br />
+		<c:url value="/user/updateUser" var="updateUser" />
 
-	<h2>Welcome: ${pageContext.request.userPrincipal.name}</h2>
-
-	<a href="<c:url value="/admin" />">Admin Page</a>
-	<br />
-	<a href="<c:url value="/listUser" />">listUser</a>
-	<form action="<c:url value="/j_duan_logout" />" method="post">
-		<input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" /> <input type="submit" value="Logout" />
-	</form>
-	<br />
-	<a href='<c:url value="/user/listUser"></c:url>'>List Chude</a>
-	<h1>Edit Chude</h1>
-	<c:url value="/user/updateUser" var="updateUser" />
-	<form:form action="${updateUser}" method="POST" modelAttribute="user"
-		acceptCharset="UTF-8">
-		<form:hidden path="id" readonly="true" />
-		<br />
-		username: <form:input path="username" readonly="true" />
-		<form:hidden path="password" readonly="true" />
-		<br />
-		enabled: <form:select path="enabled">
-			<form:option value="1">Đã kích hoạt</form:option>
-			<form:option value="0">Chưa kích hoạt</form:option>
-		</form:select>
-		<br />
-		<button type="submit">Update</button>
-		<input type="button" name="cancel" value="cancel">
-	</form:form>
+		<form:form action="${updateUser}" method="POST" modelAttribute="user"
+			acceptCharset="UTF-8">
+			<form:hidden path="id" readonly="true" />
+			<div class="form-group">
+				<label>Username</label>
+				<form:input class="form-control" path="username" readonly="true" />
+			</div>
+			<form:hidden path="password" readonly="true" />
+			<div class="form-group selectFormAddUser">
+				<label>Kích hoạt</label>
+				<form:select class="form-control" path="enabled">
+					<form:option value="1">Kích hoạt</form:option>
+					<form:option value="0">Không kích hoạt</form:option>
+				</form:select>
+			</div>
+			<button class="btn btn-info" type="submit">Sửa</button>
+		</form:form>
+	</div>
 </body>
 </html>

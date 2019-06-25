@@ -10,37 +10,42 @@
 </head>
 <body>
 
-	<h2>Welcome: ${pageContext.request.userPrincipal.name}</h2>
-	<a href="<c:url value="/user/listUser" />">listUser</a>
-	<form action="<c:url value="/j_duan_logout" />" method="post">
-		<input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" /> <input type="submit" value="Logout" />
-	</form>
-	<br/>
+	<jsp:include page="../header.jsp"></jsp:include>
+	<br />
 	<c:url value="/user/user-save" var="urlSave" />
 	<c:url value="/user/user-update" var="urlUpdate"></c:url>
 	<c:url value="/user/userDelete" var="urlDelete"></c:url>
-
-	<a href="${urlSave}">Add User</a>
-	<table>
-		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Password</th>
-			<th>Enabled</th>
-		</tr>
-		<c:if test="${not empty listUser}">
-			<c:forEach var="user" items="${listUser}">
-				<tr style="border: 1px black solid">
-					<td id="id">${user.id}</td>
-					<td id="name">${user.username}</td>
-					<td id="name">${user.password}</td>
-					<td id="name">${user.enabled}</td>
-					<td><a href="${urlUpdate}/${user.id}">Edit</a></td>
-					<td><a href="${urlDelete}/${user.id}">Delete</a></td>
+	<div class="tableUserManager">
+		<div>
+			<a href="${urlSave}" class="btn btn-info">Add User</a>
+		</div>
+		<br/>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Id</th>
+					<th scope="col">Name</th>
+					<th scope="col">Enabled</th>
+					<th scope="col">Actions</th>
 				</tr>
-			</c:forEach>
-		</c:if>
-	</table>
+			</thead>
+			<tbody>
+				<c:if test="${not empty listUser}">
+					<c:forEach var="user" items="${listUser}">
+						<tr>
+							<th scope="row">1</th>
+							<td>${user.id}</td>
+							<td>${user.username}</td>
+							<td>${user.enabled}</td>
+							<td><a class="btn btn-secondary"
+								href="${urlUpdate}/${user.id}">Edit</a> | <a
+								class="btn btn-danger" href="${urlDelete}/${user.id}">Delete</a></td>
+						</tr>
+					</c:forEach>
+				</c:if>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
