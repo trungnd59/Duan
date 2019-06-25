@@ -11,7 +11,7 @@ public class BaseController {
 	@RequestMapping(value = { "/login", "/" })
 	public String login(@RequestParam(value = "error", required = false) final String error, final Model model) {
 		if (error != null) {
-			model.addAttribute("message", "Login Failed!");
+			model.addAttribute("message", "Đăng nhập thất bại!");
 		}
 		return "login";
 	}
@@ -23,7 +23,7 @@ public class BaseController {
 
 	@RequestMapping("/logout")
 	public String logout(final Model model) {
-		model.addAttribute("message", "Logged out!");
+		model.addAttribute("message", "Đã đăng xuất!");
 		return "login";
 	}
 
