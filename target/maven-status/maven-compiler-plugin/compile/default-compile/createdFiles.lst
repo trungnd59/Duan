@@ -1,0 +1,6 @@
+stackjava\com\springsecurityhibernate\entities\UsersRoles.class
+stackjava\com\springsecurityhibernate\service\MyUserDetailsService.class
+stackjava\com\springsecurityhibernate\entities\Role.class
+stackjava\com\springsecurityhibernate\entities\User.class
+stackjava\com\springsecurityhibernate\controller\BaseController.class
+stackjava\com\springsecurityhibernate\dao\UserDAO.class
