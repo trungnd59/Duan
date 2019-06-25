@@ -9,29 +9,33 @@
 <title>save user</title>
 </head>
 <body>
-	<h2>Welcome: ${pageContext.request.userPrincipal.name}</h2>
+	<jsp:include page="../header.jsp"></jsp:include>
 
-	<a href="<c:url value="/admin" />">Admin Page</a>
-	<br />
-	<a href="<c:url value="/user/listUser" />">listUser</a>
-	<form action="<c:url value="/j_duan_logout" />" method="post">
-		<input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" /> <input type="submit" value="Logout" />
-	</form>
-	<br />
+
 	<c:url value="/user/saveUser" var="saveUser"></c:url>
-	<form:form action="${saveUser}" method="POST" modelAttribute="user"
-		acceptCharset="UTF-8">
-    	username: <form:input path="username" />
-		<br />
-		password: <form:input path="password" />
-		<br />
-		enabled: <form:select path="enabled">
-			<form:option value="1">Kích hoạt</form:option>
-			<form:option value="0">Không kích hoạt</form:option>
-		</form:select>
-		<br />
-		<button type="submit">Submit</button>
-	</form:form>
+	<div class="formInsertUser">
+		<h1>Thêm mới tài khoản</h1>
+		<br/>
+		<br/>
+		<form:form action="${saveUser}" method="POST" modelAttribute="user"
+			acceptCharset="UTF-8">
+			<div class="form-group">
+				<label>Username</label>
+				<form:input class="form-control" path="username" />
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<form:input class="form-control" type="password" path="password" />
+			</div>
+			<div class="form-group selectFormAddUser">
+				<label>Kích hoạt</label>
+				<form:select class="form-control" path="enabled">
+					<form:option value="1">Kích hoạt</form:option>
+					<form:option value="0">Không kích hoạt</form:option>
+				</form:select>
+			</div>
+			<button type="submit" class="btn btn-info">Submit</button>
+		</form:form>
+	</div>
 </body>
 </html>

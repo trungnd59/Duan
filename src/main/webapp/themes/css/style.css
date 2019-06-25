@@ -1,11 +1,34 @@
-.content{
+/* 
+Trang login
+ */
+.content {
 	width: 100%;
 }
-.mainContent{
+
+.mainContent {
 	width: 30%;
 	margin: 0 auto;
 	margin-top: 8%;
 }
-.infoMenu{
-	    margin-right: 11px;
+
+.infoMenu {
+	margin-right: 11px;
+}
+
+/* 
+Trang thêm mới user 
+*/
+.formInsertUser {
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 3%;
+}
+
+.selectFormAddUser {
+	width: 30%;
+}
+
+.tableUserManager {
+	width: 60%;
+	margin: 0 auto;
 }
