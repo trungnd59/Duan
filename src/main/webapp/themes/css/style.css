@@ -19,7 +19,7 @@ Trang login
 Trang thêm mới user 
 */
 .formInsertUser {
-	width: 60%;
+	width: 30%;
 	margin: 0 auto;
 	margin-top: 3%;
 }
@@ -29,6 +29,6 @@ Trang thêm mới user
 }
 
 .tableUserManager {
-	width: 60%;
+	width: 80%;
 	margin: 0 auto;
 }
