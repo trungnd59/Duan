@@ -1,5 +1,4 @@
 package com.controller;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +15,12 @@ public class BaseController {
 		return "login";
 	}
 
-	@RequestMapping("/users")
+	@RequestMapping("/admin")
+	public String admin() {
+		return "admin";
+	}
+
+	@RequestMapping("/user")
 	public String user() {
 		return "user";
 	}
@@ -26,5 +30,4 @@ public class BaseController {
 		model.addAttribute("message", "Đã đăng xuất!");
 		return "login";
 	}
-
 }
