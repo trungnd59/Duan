@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -64,13 +66,19 @@ public class Users implements Serializable {
 
 	@Column(name = "phone")
 	private String phone;
+	@ManyToOne
+	@JoinColumn(name = "departID")
+	private Departs depart;
 
 	public Users() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public Users(Integer id, String username, String password, Boolean enabled, Set<UsersRoles> usersRoleses,
-			String fullname, String age, String address, String salary, Boolean gender, String email, String phone) {
+			String fullname, String age, String address, String salary, Boolean gender, String email, String phone,
+			Departs depart) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -84,7 +92,10 @@ public class Users implements Serializable {
 		this.gender = gender;
 		this.email = email;
 		this.phone = phone;
+		this.depart = depart;
 	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -180,6 +191,15 @@ public class Users implements Serializable {
 
 	public void setUsersRoleses(final Set<UsersRoles> usersRoleses) {
 		this.usersRoleses = usersRoleses;
+	}
+	
+
+	public Departs getDepart() {
+		return depart;
+	}
+
+	public void setDepart(Departs depart) {
+		this.depart = depart;
 	}
 
 	@Transient
