@@ -13,56 +13,19 @@
 	<div class="formInsertUser">
 		<h1>Sửa thông tin tài khoản</h1>
 		<br /> <br />
-		<c:url value="/admin/adminupdateUser" var="updateUser" />
+		<c:url value="/admin/adminupdateDepart" var="updateDepart" />
 
-		<form:form action="${updateUser}" method="POST" modelAttribute="user"
+		<form:form action="${updateDepart}" method="POST" modelAttribute="depart"
 			acceptCharset="UTF-8">
 			<form:hidden path="id" readonly="true" />
 			<div class="form-group">
-				<label>Username</label>
-				<form:input class="form-control" path="username"/>
-			</div>
-			<form:hidden path="password" readonly="true" />
-			<div class="form-group selectFormAddUser">
-				<label>Kích hoạt</label>
-				<form:select class="form-control" path="enabled">
-					<form:option value="1">Kích hoạt</form:option>
-					<form:option value="0">Không kích hoạt</form:option>
-				</form:select>
+				<label>Ten phòng ban</label>
+				<form:input class="form-control" path="tenphongban" />
 			</div>
 			<div class="form-group">
-				<label>Full name</label>
-				<form:input class="form-control" path="fullname"/>
-			</div>
-			<div class="form-group">
-				<label>Age</label>
-				<form:input type="number" class="form-control" path="age"/>
-			</div>
-			<div class="form-group">
-				<label>Address</label>
-				<form:input class="form-control" path="address"/>
-			</div>
-			<div class="form-group">
-				<label>Salary</label>
-				<form:input type="number" class="form-control" path="salary"/>
-			</div>
-			<div class="form-group selectFormAddUser">
-				<label>Gender</label>
-				<form:select class="form-control" path="gender">
-					<form:option value="1">Male</form:option>
-					<form:option value="0">Female</form:option>
-				</form:select>
-			</div>
-			<div class="form-group">
-				<label>Email</label>
-				<form:input class="form-control" path="email"/>
-			</div>
-			<div class="form-group">
-				<label>Phone</label>
-				<form:input type="number" class="form-control" path="phone"/>
-			</div>
-			
-			
+				<label>Chức năng</label>
+				<form:input class="form-control" path="chucnang" />
+			</div>			
 			<button class="btn btn-info" type="submit">Sửa</button>
 		</form:form>
 	</div>

@@ -6,28 +6,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>save user</title>
+<title>Update user</title>
 </head>
 <body>
 	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-
-
-	<c:url value="/admin/adminsaveDepart" var="saveDepart"></c:url>
 	<div class="formInsertUser">
-		<h1>Thêm mới phòng ban</h1>
-		<br/>
-		<br/>
-		<form:form action="${saveDepart}" method="POST" modelAttribute="depart"
+		<h1>Sửa thông tin chức vụ</h1>
+		<br /> <br />
+		<c:url value="/admin/adminupdateChucvu" var="updateChucvu" />
+
+		<form:form action="${updateChucvu}" method="POST" modelAttribute="chucvu"
 			acceptCharset="UTF-8">
+			<form:hidden path="id" readonly="true" />
 			<div class="form-group">
-				<label>Ten phòng ban</label>
-				<form:input class="form-control" path="tenphongban" />
+				<label>Tên chức vụ</label>
+				<form:input class="form-control" path="tenchucvu" />
 			</div>
 			<div class="form-group">
-				<label>Chức năng</label>
-				<form:input class="form-control" path="chucnang" />
+				<label>Công việc</label>
+				<form:input class="form-control" path="congviec" />
 			</div>			
-			<button type="submit" class="btn btn-info">Submit</button>
+			<button class="btn btn-info" type="submit">Sửa</button>
 		</form:form>
 	</div>
 </body>

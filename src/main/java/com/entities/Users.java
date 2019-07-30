@@ -4,6 +4,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -69,33 +70,19 @@ public class Users implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "departID")
 	private Departs depart;
+	@ManyToOne
+	@JoinColumn(name = "chucvuID")
+	private Chucvu chucvu;
+	@OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
+	private Collection<Thanhtich> thanhtich;
+	
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+	private Collection<Lichsulamviec> lichsulamviec ;
+	
 
 	public Users() {
 		// TODO Auto-generated constructor stub
 	}
-
-	
-
-	public Users(Integer id, String username, String password, Boolean enabled, Set<UsersRoles> usersRoleses,
-			String fullname, String age, String address, String salary, Boolean gender, String email, String phone,
-			Departs depart) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.enabled = enabled;
-		this.usersRoleses = usersRoleses;
-		this.fullname = fullname;
-		this.age = age;
-		this.address = address;
-		this.salary = salary;
-		this.gender = gender;
-		this.email = email;
-		this.phone = phone;
-		this.depart = depart;
-	}
-
-
 
 	public Integer getId() {
 		return id;
@@ -200,6 +187,30 @@ public class Users implements Serializable {
 
 	public void setDepart(Departs depart) {
 		this.depart = depart;
+	}
+
+	public Chucvu getChucvu() {
+		return chucvu;
+	}
+
+	public void setChucvu(Chucvu chucvu) {
+		this.chucvu = chucvu;
+	}
+
+	public Collection<Thanhtich> getThanhtich() {
+		return thanhtich;
+	}
+
+	public void setThanhtich(Collection<Thanhtich> thanhtich) {
+		this.thanhtich = thanhtich;
+	}
+
+	public Collection<Lichsulamviec> getLichsulamviec() {
+		return lichsulamviec;
+	}
+
+	public void setLichsulamviec(Collection<Lichsulamviec> lichsulamviec) {
+		this.lichsulamviec = lichsulamviec;
 	}
 
 	@Transient
