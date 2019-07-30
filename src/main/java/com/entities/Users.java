@@ -76,9 +76,6 @@ public class Users implements Serializable {
 	@OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
 	private Collection<Thanhtich> thanhtich;
 	
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-	private Collection<Lichsulamviec> lichsulamviec ;
-	
 
 	public Users() {
 		// TODO Auto-generated constructor stub
@@ -205,13 +202,7 @@ public class Users implements Serializable {
 		this.thanhtich = thanhtich;
 	}
 
-	public Collection<Lichsulamviec> getLichsulamviec() {
-		return lichsulamviec;
-	}
 
-	public void setLichsulamviec(Collection<Lichsulamviec> lichsulamviec) {
-		this.lichsulamviec = lichsulamviec;
-	}
 
 	@Transient
 	public List<GrantedAuthority> getAuthorities() {
