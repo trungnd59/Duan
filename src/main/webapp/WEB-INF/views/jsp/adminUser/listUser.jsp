@@ -40,6 +40,8 @@
 					<th>Gender</th>
 					<th>Email</th>
 					<th>Phone</th>
+					<th>Phòng ban</th>
+					<th>Chức vụ</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -60,6 +62,8 @@
 							<td>${user.gender?'Male':'Female'}</td>
 							<td>${user.email}</td>
 							<td>${user.phone}</td>
+							<td>${user.depart.tenphongban}</td>
+							<td>${user.chucvu.tenchucvu}</td>
 							<td><a class="btn btn-secondary"
 								href="${urlUpdate}/${user.id}">Edit</a> | <a
 								class="btn btn-danger" href="${urlDelete}/${user.id}">Delete</a></td>

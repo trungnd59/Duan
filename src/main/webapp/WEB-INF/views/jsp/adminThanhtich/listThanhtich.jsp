@@ -15,41 +15,42 @@
 </head>
 <body>
 
-	<c:url value="/admin/adminDepart-save" var="urlSave" />
-	<c:url value="/admin/adminDepart-update" var="urlUpdate"></c:url>
-	<c:url value="/admin/departDelete" var="urlDelete"></c:url>
+	<c:url value="/admin/adminThanhtich-save" var="urlSave" />
+		<c:url value="/admin/adminreport" var="urlTongket" />
+	<%-- <c:url value="/admin/adminChucvu-update" var="urlUpdate"></c:url> --%>
+<%-- 	<c:url value="/admin/chucvuDelete" var="urlDelete"></c:url> --%>
 	<jsp:include page="../headerAdmin.jsp"></jsp:include>
 	<br />
 
 	<div class="tableUserManager">
 		<div>
-			<a href="${urlSave}" class="btn btn-info">Thêm phòng ban</a>
+			<a href="${urlSave}" class="btn btn-info">Thêm thành tích hoặc kỷ luật</a>
+			<a href="${urlTongket}" class="btn btn-info">Tổng kết</a>
 		</div>
+
+		
 		<br />
-		<table class="table table-striped" id="listDepart">
+		<table class="table table-striped" id="list">
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Id</th>
-					<th>ten phong ban</th>
-					<th>chuc nang</th>
-					<th>Actions</th>
+					<th>Mã nhân viên</th>
+					<th>Loại thành tích</th>
+					<th>lý do</th>
+					<th>ngày ghi nhận</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:if test="${not empty listDepart}">
+				<c:if test="${not empty listThanhtich}">
 					<c:set var="count" value="0" />
-					<c:forEach var="depart" items="${listDepart}">
+					<c:forEach var="thanhtich" items="${listThanhtich}">
 						<tr>
 							<c:set var="count" value="${count+1}" />
 							<th>${count}</th>
-							<td>${depart.id}</td>
-							<td>${depart.tenphongban}</td>
-							<td>${depart.chucnang}</td>
-							
-							<td><a class="btn btn-secondary"
-								href="${urlUpdate}/${depart.id}">Edit</a> | <a
-								class="btn btn-danger" href="${urlDelete}/${depart.id}">Delete</a></td>
+							<td>${thanhtich.users.fullname}</td>
+							<td>${thanhtich.loaithanhtich?'Kỷ luật':'Thành tích'}</td>
+							<td>${thanhtich.lydo}</td>					
+							<td>${thanhtich.ngayghinhan}</td>				
 						</tr>
 					</c:forEach>
 				</c:if>
@@ -57,7 +58,7 @@
 		</table>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$('#listDepart').DataTable();
+				$('#list').DataTable();
 			});
 		</script>
 	</div>

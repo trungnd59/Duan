@@ -12,20 +12,20 @@
 	<jsp:include page="../headerAdmin.jsp"></jsp:include>
 
 
-	<c:url value="/admin/adminsaveDepart" var="saveDepart"></c:url>
+	<c:url value="/admin/adminsaveChucvu" var="saveChucvu"></c:url>
 	<div class="formInsertUser">
-		<h1>Thêm mới phòng ban</h1>
+		<h1>Thêm mới chức vụ</h1>
 		<br/>
 		<br/>
-		<form:form action="${saveDepart}" method="POST" modelAttribute="depart"
+		<form:form action="${saveChucvu}" method="POST" modelAttribute="chucvu"
 			acceptCharset="UTF-8">
 			<div class="form-group">
-				<label>Ten phòng ban</label>
-				<form:input class="form-control" path="tenphongban" />
+				<label>Tên chức vụ</label>
+				<form:input class="form-control" path="tenchucvu" />
 			</div>
 			<div class="form-group">
-				<label>Chức năng</label>
-				<form:input class="form-control" path="chucnang" />
+				<label>Công việc</label>
+				<form:input class="form-control" path="congviec" />
 			</div>			
 			<button type="submit" class="btn btn-info">Submit</button>
 		</form:form>

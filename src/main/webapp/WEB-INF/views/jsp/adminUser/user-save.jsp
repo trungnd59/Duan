@@ -15,8 +15,7 @@
 	<c:url value="/admin/adminsaveUser" var="saveUser"></c:url>
 	<div class="formInsertUser">
 		<h1>Thêm mới thông tin nhân viên</h1>
-		<br/>
-		<br/>
+		<br /> <br />
 		<form:form action="${saveUser}" method="POST" modelAttribute="user"
 			acceptCharset="UTF-8">
 			<div class="form-group">
@@ -40,7 +39,8 @@
 			</div>
 			<div class="form-group">
 				<label>Age</label>
-				<form:input type="number" pattern="[0-9]*" class="form-control" path="age" />
+				<form:input type="number" pattern="[0-9]*" class="form-control"
+					path="age" />
 			</div>
 			<div class="form-group">
 				<label>Address</label>
@@ -48,7 +48,8 @@
 			</div>
 			<div class="form-group">
 				<label>Salary</label>
-				<form:input type="number" pattern="[0-9]*" class="form-control" path="salary" />
+				<form:input type="number" pattern="[0-9]*" class="form-control"
+					path="salary" />
 			</div>
 			<div class="form-group selectFormAddUser">
 				<label>Gender</label>
@@ -63,7 +64,22 @@
 			</div>
 			<div class="form-group">
 				<label>Phone</label>
-				<form:input type="number" pattern="[0-9]*" class="form-control" path="phone" />
+				<form:input type="number" pattern="[0-9]*" class="form-control"
+					path="phone" />
+			</div>
+			<div class="form-group selectFormAddUser">
+				<form:select class="form-control" path="depart.id">
+					<form:option value="0">Chọn phòng ban</form:option>
+					<form:options items="${listDepart}" itemValue="id"
+						itemLabel="tenphongban" />
+				</form:select>
+			</div>
+			<div class="form-group selectFormAddUser">
+				<form:select class="form-control" path="chucvu.id">
+					<form:option value="0">Chọn Chức vụ</form:option>
+					<form:options items="${chucvuList}" itemValue="id"
+						itemLabel="tenchucvu" />
+				</form:select>
 			</div>
 			<button type="submit" class="btn btn-info">Submit</button>
 		</form:form>

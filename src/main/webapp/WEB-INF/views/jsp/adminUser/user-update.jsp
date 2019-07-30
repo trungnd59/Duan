@@ -20,7 +20,7 @@
 			<form:hidden path="id" readonly="true" />
 			<div class="form-group">
 				<label>Username</label>
-				<form:input class="form-control" path="username"/>
+				<form:input class="form-control" path="username" />
 			</div>
 			<form:hidden path="password" readonly="true" />
 			<div class="form-group selectFormAddUser">
@@ -32,19 +32,19 @@
 			</div>
 			<div class="form-group">
 				<label>Full name</label>
-				<form:input class="form-control" path="fullname"/>
+				<form:input class="form-control" path="fullname" />
 			</div>
 			<div class="form-group">
 				<label>Age</label>
-				<form:input type="number" class="form-control" path="age"/>
+				<form:input type="number" class="form-control" path="age" />
 			</div>
 			<div class="form-group">
 				<label>Address</label>
-				<form:input class="form-control" path="address"/>
+				<form:input class="form-control" path="address" />
 			</div>
 			<div class="form-group">
 				<label>Salary</label>
-				<form:input type="number" class="form-control" path="salary"/>
+				<form:input type="number" class="form-control" path="salary" />
 			</div>
 			<div class="form-group selectFormAddUser">
 				<label>Gender</label>
@@ -55,14 +55,26 @@
 			</div>
 			<div class="form-group">
 				<label>Email</label>
-				<form:input class="form-control" path="email"/>
+				<form:input class="form-control" path="email" />
 			</div>
 			<div class="form-group">
 				<label>Phone</label>
-				<form:input type="number" class="form-control" path="phone"/>
+				<form:input type="number" class="form-control" path="phone" />
 			</div>
-			
-			
+			<div class="form-group selectFormAddUser">
+				<form:select class="form-control" path="depart.id">
+					<form:option value="0">Chọn phòng ban</form:option>
+					<form:options items="${listDepart}" itemValue="id"
+						itemLabel="tenphongban" />
+				</form:select>
+			</div>
+			<div class="form-group selectFormAddUser">
+				<form:select class="form-control" path="chucvu.id">
+					<form:option value="0">Chọn Chức vụ</form:option>
+					<form:options items="${chucvuList}" itemValue="id"
+						itemLabel="tenchucvu" />
+				</form:select>
+			</div>
 			<button class="btn btn-info" type="submit">Sửa</button>
 		</form:form>
 	</div>
