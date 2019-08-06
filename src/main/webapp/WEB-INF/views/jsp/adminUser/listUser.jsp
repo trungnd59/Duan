@@ -53,7 +53,8 @@
 							<c:set var="count" value="${count+1}" />
 							<th>${count}</th>
 							<td>${user.id}</td>
-							<td>${user.username}</td>
+							<td><a class="nav-link"
+					href="<c:url value="/admin/listLichSu/${user.id }"/>">${user.username}</a></td>
 							<td>${user.enabled?'Enabled':'Disabled'}</td>
 							<td>${user.fullname}</td>
 							<td>${user.age}</td>

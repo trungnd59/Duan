@@ -34,6 +34,16 @@ public class MyUserDetailsService implements UserDetailsService {
 				accountNonLocked, user.getAuthorities());
 	}
 
+	public Users getUserByUsername(final String username) throws UsernameNotFoundException {
+
+		Users user = userDAO.loadUserByUsername(username);
+		if (user == null) {
+			return null;
+		}
+
+		return user;
+	}
+
 	public List<com.entities.Users> findAllUser() {
 		return userDAO.finAllUser();
 	}

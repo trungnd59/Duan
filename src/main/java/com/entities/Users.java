@@ -75,7 +75,8 @@ public class Users implements Serializable {
 	private Chucvu chucvu;
 	@OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
 	private Collection<Thanhtich> thanhtich;
-	
+	@OneToMany(mappedBy = "userlichsu", fetch = FetchType.LAZY)
+	private Collection<LichSuLamViec> lichsulv;
 
 	public Users() {
 		// TODO Auto-generated constructor stub
@@ -176,7 +177,6 @@ public class Users implements Serializable {
 	public void setUsersRoleses(final Set<UsersRoles> usersRoleses) {
 		this.usersRoleses = usersRoleses;
 	}
-	
 
 	public Departs getDepart() {
 		return depart;
@@ -201,8 +201,16 @@ public class Users implements Serializable {
 	public void setThanhtich(Collection<Thanhtich> thanhtich) {
 		this.thanhtich = thanhtich;
 	}
+	
+	
 
+	public Collection<LichSuLamViec> getLichsulv() {
+		return lichsulv;
+	}
 
+	public void setLichsulv(Collection<LichSuLamViec> lichsulv) {
+		this.lichsulv = lichsulv;
+	}
 
 	@Transient
 	public List<GrantedAuthority> getAuthorities() {
