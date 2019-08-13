@@ -56,7 +56,7 @@
 					<td id="mota${LichSuLamViec.id}">${LichSuLamViec.mota}</td>
 					<td><a class="fas fa-trash-alt"
 						href="./lichsudelete/${ LichSuLamViec.id }">xoa</a> <a
-						href="./presuacongviec/${LichSuLamViec.id}">sua</a></td>
+						href="../presuacongviec/${LichSuLamViec.id}">sua</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

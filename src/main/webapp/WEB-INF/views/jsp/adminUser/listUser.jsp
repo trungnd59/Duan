@@ -32,17 +32,16 @@
 					<th>#</th>
 					<th>Id</th>
 					<th>Username</th>
-					<th>Enabled</th>
-					<th>Full Name</th>
-					<th>Age</th>
-					<th>Address</th>
-					<th>Salary</th>
-					<th>Gender</th>
+					<th>Tên đầy đủ</th>
+					<th>Ngày sinh</th>
+					<th>Địa chỉ</th>
+					<th>Mức lương</th>
+					<th>Giới tính</th>
 					<th>Email</th>
-					<th>Phone</th>
+					<th>Điện thoại</th>
 					<th>Phòng ban</th>
 					<th>Chức vụ</th>
-					<th>Actions</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -55,9 +54,8 @@
 							<td>${user.id}</td>
 							<td><a class="nav-link"
 					href="<c:url value="/admin/listLichSu/${user.id }"/>">${user.username}</a></td>
-							<td>${user.enabled?'Enabled':'Disabled'}</td>
 							<td>${user.fullname}</td>
-							<td>${user.age}</td>
+							<td>${user.ngaysinh}</td>
 							<td>${user.address}</td>
 							<td>${user.salary}</td>
 							<td>${user.gender?'Male':'Female'}</td>

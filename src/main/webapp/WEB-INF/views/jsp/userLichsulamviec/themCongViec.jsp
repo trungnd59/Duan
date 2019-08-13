@@ -28,11 +28,11 @@
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputEmail4">Ngày bắt đầu</label>
-				<form:input class="form-control" path="startdate" />
+				<form:input class="form-control" type="date" path="startdate" />
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputEmail4">Ngày kết thúc</label>
-				<form:input class="form-control" path="finishdate" />
+				<form:input class="form-control" type="date" path="finishdate" />
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputEmail4">Mô tả</label>

@@ -50,8 +50,8 @@ public class Users implements Serializable {
 	@Column(name = "fullname")
 	private String fullname;
 
-	@Column(name = "age")
-	private String age;
+	@Column(name = "ngaysinh")
+	private String ngaysinh;
 
 	@Column(name = "address")
 	private String address;
@@ -122,12 +122,13 @@ public class Users implements Serializable {
 		this.fullname = fullname;
 	}
 
-	public String getAge() {
-		return age;
+
+	public String getNgaysinh() {
+		return ngaysinh;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
+	public void setNgaysinh(String ngaysinh) {
+		this.ngaysinh = ngaysinh;
 	}
 
 	public String getAddress() {

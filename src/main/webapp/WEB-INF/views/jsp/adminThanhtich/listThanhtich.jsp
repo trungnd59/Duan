@@ -34,7 +34,7 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Mã nhân viên</th>
+					<th>Nhân viên</th>
 					<th>Loại thành tích</th>
 					<th>lý do</th>
 					<th>ngày ghi nhận</th>

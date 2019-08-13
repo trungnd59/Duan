@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>save user</title>
+<title>Thêm mới tài khoản</title>
 </head>
 <body>
 	<jsp:include page="../headerAdmin.jsp"></jsp:include>
@@ -38,9 +38,8 @@
 				<form:input class="form-control" path="fullname" />
 			</div>
 			<div class="form-group">
-				<label>Age</label>
-				<form:input type="number" pattern="[0-9]*" class="form-control"
-					path="age" />
+				<label>Ngày sinh</label>
+				<form:input type="date" class="form-control" path="ngaysinh" />
 			</div>
 			<div class="form-group">
 				<label>Address</label>
