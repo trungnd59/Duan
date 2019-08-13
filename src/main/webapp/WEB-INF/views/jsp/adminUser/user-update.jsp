@@ -35,8 +35,8 @@
 				<form:input class="form-control" path="fullname" />
 			</div>
 			<div class="form-group">
-				<label>Age</label>
-				<form:input type="number" class="form-control" path="age" />
+				<label>Ngày sinh</label>
+				<form:input type="date" class="form-control" path="ngaysinh" />
 			</div>
 			<div class="form-group">
 				<label>Address</label>

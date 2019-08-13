@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dao.ChucvuDAO;
 import com.dao.LichSuDAO;
-import com.entities.Chucvu;
 import com.entities.LichSuLamViec;
 @Service
 @Transactional
@@ -22,7 +20,7 @@ public class LichSuService {
 	public List<LichSuLamViec> findAllLichSuByName(String userName) {
 		return lichSuDAO.findAllLichSuByUsername(userName);
 	}
-	public void saveChucvu(LichSuLamViec lichSuLamViec) {
+	public void saveLichSu(LichSuLamViec lichSuLamViec) {
 		lichSuDAO.saveLichSu(lichSuLamViec);
 	}
 
