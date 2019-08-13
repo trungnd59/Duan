@@ -14,8 +14,8 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
-	<form:form id="form_id" action="/Duan/user/themcongviec/${userId}"
-		method="POST" modelAttribute="lichsulamviec" acceptCharset="UTF-8">
+	<form:form action="/Duan/user/suacongviec/${userId}" modelAttribute="lichsulamviec"
+		method="POST"  acceptCharset="UTF-8">
 		<div class="form-row">
 
 			<div class="form-group col-md-6">
@@ -39,8 +39,7 @@
 				<form:input class="form-control" path="mota" />
 			</div>
 			<div class="form-group col-md-2">
-				<button type="submit" id="create" class="btn btn-primary">Create</button>
-
+				<button type="submit" id="create" class="btn btn-primary">Sửa</button>
 			</div>
 		</div>
 

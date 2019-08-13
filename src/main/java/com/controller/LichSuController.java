@@ -84,6 +84,13 @@ public class LichSuController {
 		return "redirect: /Duan/user/listLichSu/"+username;
 	}
 
+	@RequestMapping("/user/listLichSu/presuacongviec/{id}")
+	public String suaLichSu(ModelMap model, @PathVariable("id") int id) {
+		LichSuLamViec lichsu= lichSuService.findByIdLichSuLamViec(id);
+		model.addAttribute("lichsulamviec", lichsu);
+		return "userLichsulamviec/suaCongViec";
+	}
+	
 	/*
 	 * POST sửa công việc
 	 */
