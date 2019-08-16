@@ -23,7 +23,23 @@ public class LichSuController {
 	private LichSuService lichSuService;
 	@Autowired
 	private MyUserDetailsService myUser;
-
+	
+	
+	
+	
+	/*
+	 * Get profile by userId
+	 */
+	@RequestMapping(value = { "/user/profile/{userId}" })
+	public String profileuser(Model model, @PathVariable("userId") String userId,
+			@ModelAttribute("profile") Users users) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String name = authentication.getName();
+		Users u = (Users) myUser.getUserByUsername(name);
+		model.addAttribute("thongtin", myUser.findUserById(u.getId()));
+		return "userThongtin/profile";
+	}
+	
 	/*
 	 * Get list lịch sử
 	 */
@@ -32,7 +48,6 @@ public class LichSuController {
 			@ModelAttribute("lichsulamviec") LichSuLamViec lichSuLamViec) {
 		model.addAttribute("listLichSu", lichSuService.findAllLichSu(userId));
 		for (LichSuLamViec ls : lichSuService.findAllLichSu(userId)) {
-			System.out.println(ls.getDiadiem());
 		}
 		return "adminLichsulamviec/listLichSu";
 	}
@@ -49,6 +64,7 @@ public class LichSuController {
 		model.addAttribute("listLichSu", lichSuService.findAllLichSu(u.getId()));
 		return "userLichsulamviec/listLichSu";
 	}
+	
 
 	@RequestMapping("/user/themcongviec/{userId}")
 	public String saveLichSu(@ModelAttribute("lichsulamviec") LichSuLamViec lichSuLamViec, ModelMap model,
