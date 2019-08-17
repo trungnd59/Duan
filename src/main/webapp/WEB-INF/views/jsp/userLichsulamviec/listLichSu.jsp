@@ -6,20 +6,56 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-
-
-
+<title>Danh sách lịch sử làm việc</title>
 </head>
 
 <body>
-
+	<c:url value="../themcongviec/${userId }" var="urlThemcongviec" />
 	<jsp:include page="../header.jsp"></jsp:include>
-	<li class="nav-item"><a class="nav-link"
-		href="/Duan/user/themcongviec/${userId }">Thêm công việc</a></li>
+	<div class="tableUserManager">
+		<div class="button-intop">
+			<a class="btn btn-primary" href="${urlThemcongviec }">Thêm công
+				việc</a>
+		</div>
+
+		<table class="table table-striped" id="list">
+			<thead>
+				<tr>
+					<th class="th-sm">STT</th>
+					<th class="th-sm">Địa điểm</th>
+					<th class="th-sm">Vai trò</th>
+					<th class="th-sm">Ngày bắt đầu</th>
+					<th class="th-sm">Ngày kết thúc</th>
+					<th class="th-sm">Mô tả</th>
+					<th class="th-sm">Hành động</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="LichSuLamViec" items="${listLichSu }"
+					varStatus="index">
+					<tr>
+						<td id="id">${LichSuLamViec.id}</td>
+						<td id="diadiem${LichSuLamViec.id}">${LichSuLamViec.diadiem}</td>
+						<td id="vaitro${LichSuLamViec.id}">${LichSuLamViec.vaitro}</td>
+						<td id="startdate${LichSuLamViec.id}">${LichSuLamViec.startdate}</td>
+						<td id="finishdate${LichSuLamViec.id}">${LichSuLamViec.finishdate}</td>
+						<td id="mota${LichSuLamViec.id}">${LichSuLamViec.mota}</td>
+						<td><a class="btn btn-secondary"
+							href="../presuacongviec/${LichSuLamViec.id}">Sửa</a> <a
+							class="btn btn-danger"
+							href="./lichsudelete/${ LichSuLamViec.id }">Xóa</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#list').DataTable();
+		});
+	</script>
 
 	<c:set var="Messagedelete" value="${deleteMessage }"></c:set>
-
 	${deleteMessage }
 	<c:choose>
 		<c:when test="${Messagedelete==1 }">
@@ -30,40 +66,5 @@
 				cong!</div>
 		</c:when>
 	</c:choose>
-	<table id="dtVerticalScrollExample"
-		class="table table-striped table-bordered table-sm">
-		<thead>
-			<tr>
-				<th class="th-sm">STT</th>
-				<th class="th-sm">Địa điểm</th>
-				<th class="th-sm">Vai trò</th>
-				<th class="th-sm">Ngày bắt đầu</th>
-				<th class="th-sm">Ngày kết thúc</th>
-				<th class="th-sm">Mô tả</th>
-				<th class="th-sm">Hành động</th>
-			</tr>
-		</thead>
-		<tbody>
-
-			<c:forEach var="LichSuLamViec" items="${listLichSu }"
-				varStatus="index">
-				<tr>
-					<td id="id">${LichSuLamViec.id}</td>
-					<td id="diadiem${LichSuLamViec.id}">${LichSuLamViec.diadiem}</td>
-					<td id="vaitro${LichSuLamViec.id}">${LichSuLamViec.vaitro}</td>
-					<td id="startdate${LichSuLamViec.id}">${LichSuLamViec.startdate}</td>
-					<td id="finishdate${LichSuLamViec.id}">${LichSuLamViec.finishdate}</td>
-					<td id="mota${LichSuLamViec.id}">${LichSuLamViec.mota}</td>
-					<td><a class="fas fa-trash-alt"
-						href="./lichsudelete/${ LichSuLamViec.id }">xoa</a> <a
-						href="../presuacongviec/${LichSuLamViec.id}">sua</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-
 </body>
-
-
-</script>
 </html>

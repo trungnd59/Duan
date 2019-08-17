@@ -10,7 +10,7 @@
 <link href="<c:url value="/themes/css/datatables.min.css" />"
 	rel="stylesheet">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Chỉnh sửa thông tin lịch sử làm việc</title>
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>

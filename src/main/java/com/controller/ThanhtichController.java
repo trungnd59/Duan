@@ -4,8 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +22,6 @@ public class ThanhtichController {
 	ThanhtichService thanhtichService;
 	@Autowired
 	MyUserDetailsService userService;
-	
-	@Autowired
-	SessionFactory sessionFactory;
 
 	@RequestMapping(value = { "/adminlistRecord" })
 	public String listThanhtich(Model model) {

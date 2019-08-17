@@ -11,7 +11,7 @@
 <link href="<c:url value="/themes/css/datatables.min.css" />"
 	rel="stylesheet">
 <meta charset="UTF-8">
-<title>Danh sách tài khoản</title>
+<title>Danh sách nhân viên</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 	<jsp:include page="../headerAdmin.jsp"></jsp:include>
 	<br />
 
-	<div class="tableUserManager">
+	<div class="tableUserManagerUser">
 		<div>
 			<a href="${urlSave}" class="btn btn-info">Add User</a>
 		</div>
@@ -31,17 +31,12 @@
 				<tr>
 					<th>#</th>
 					<th>Id</th>
-					<th>Username</th>
 					<th>Tên đầy đủ</th>
-					<th>Ngày sinh</th>
-					<th>Địa chỉ</th>
-					<th>Mức lương</th>
-					<th>Giới tính</th>
 					<th>Email</th>
 					<th>Điện thoại</th>
 					<th>Phòng ban</th>
 					<th>Chức vụ</th>
-					<th></th>
+					<th>Thao tác</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,13 +47,7 @@
 							<c:set var="count" value="${count+1}" />
 							<th>${count}</th>
 							<td>${user.id}</td>
-							<td><a class="nav-link"
-					href="<c:url value="/admin/listLichSu/${user.id }"/>">${user.username}</a></td>
-							<td>${user.fullname}</td>
-							<td>${user.ngaysinh}</td>
-							<td>${user.address}</td>
-							<td>${user.salary}</td>
-							<td>${user.gender?'Nam':'Nữ'}</td>
+							<td><a class="nav-link" href="<c:url value="/admin/listLichSu/${user.id }"/>">${user.fullname}</a></td>
 							<td>${user.email}</td>
 							<td>${user.phone}</td>
 							<td>${user.depart.tenphongban}</td>

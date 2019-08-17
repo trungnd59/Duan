@@ -15,6 +15,11 @@ Trang login
 	margin-right: 11px;
 }
 
+.tableUserManager {
+	width: 80%;
+	margin: 0 auto;
+}
+
 /* 
 Trang thêm mới user 
 */
@@ -28,7 +33,35 @@ Trang thêm mới user
 	width: 30%;
 }
 
-.tableUserManager {
-	width: 80%;
+.tableUserManagerUser {
+	width: 95%;
 	margin: 0 auto;
+}
+
+.button-intop {
+	margin: 2% 0% 3%;
+}
+
+/*  
+trang profile
+*/
+.card {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.card-img-top {
+	width: 35%;
+	margin: 0 auto;
+}
+
+.nutchinhsuathongtin {
+	margin-left: 35%;
+}
+
+/*
+lịch sử làm việc nhân viên 
+ */
+.TitleLichsulamviec {
+	margin: 5% 0;
 }
