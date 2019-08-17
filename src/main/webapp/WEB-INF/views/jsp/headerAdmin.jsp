@@ -38,9 +38,12 @@
 				<li class="nav-item"><a class="nav-link"
 					href="<c:url value="/admin/adminlistChucvu"/>">Quản lý chức vụ</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<c:url value="/admin/adminlistRecord"/>">Khen thưởng - Kỷ luật</a></li>
-					<li class="nav-item"><a class="nav-link"
+					href="<c:url value="/admin/adminlistRecord"/>">Khen thưởng - Kỷ
+						luật</a></li>
+				<li class="nav-item"><a class="nav-link"
 					href="<c:url value="/admin/adminTongluong"/>">Tính lương</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="<c:url value="/admin/adminlistTaikhoan"/>">Quản lý tài khoản</a></li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0"
 				action="<c:url value="/j_duan_logout" />" method="post">

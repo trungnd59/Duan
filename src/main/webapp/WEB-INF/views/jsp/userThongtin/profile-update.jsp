@@ -9,26 +9,23 @@
 <title>Update user</title>
 </head>
 <body>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
 	<div class="formInsertUser">
 		<h1>Sửa thông tin tài khoản</h1>
 		<br /> <br />
-		<c:url value="/admin/adminupdateUser" var="updateUser" />
-
-		<form:form action="${updateUser}" method="POST" modelAttribute="user"
-			acceptCharset="UTF-8">
+		<form:form action="/Duan/user/suaProfile/${userId}" method="POST"
+			modelAttribute="user" acceptCharset="UTF-8">
 			<form:hidden path="id" />
+			<form:hidden path="enabled" />
+			
+			<form:hidden path="password" />
+			
+			<form:hidden path="chucvu.id" />
+			<form:hidden path="depart.id" />
+			<form:hidden path="salary" />
 			<div class="form-group">
 				<label>Username</label>
 				<form:input class="form-control" path="username" />
-			</div>
-			<form:hidden path="password" readonly="true" />
-			<div class="form-group selectFormAddUser">
-				<label>Kích hoạt</label>
-				<form:select class="form-control" path="enabled">
-					<form:option value="1">Kích hoạt</form:option>
-					<form:option value="0">Không kích hoạt</form:option>
-				</form:select>
 			</div>
 			<div class="form-group">
 				<label>Full name</label>
@@ -41,10 +38,6 @@
 			<div class="form-group">
 				<label>Address</label>
 				<form:input class="form-control" path="address" />
-			</div>
-			<div class="form-group">
-				<label>Salary</label>
-				<form:input type="number" class="form-control" path="salary" />
 			</div>
 			<div class="form-group selectFormAddUser">
 				<label>Gender</label>
@@ -59,23 +52,10 @@
 			</div>
 			<div class="form-group">
 				<label>Phone</label>
-				<form:input type="number" class="form-control" path="phone" />
+				<form:input type="number" pattern="[0-9]*" class="form-control"
+					path="phone" />
 			</div>
-			<div class="form-group selectFormAddUser">
-				<form:select class="form-control" path="depart.id">
-					<form:option value="0">Chọn phòng ban</form:option>
-					<form:options items="${listDepart}" itemValue="id"
-						itemLabel="tenphongban" />
-				</form:select>
-			</div>
-			<div class="form-group selectFormAddUser">
-				<form:select class="form-control" path="chucvu.id">
-					<form:option value="0">Chọn Chức vụ</form:option>
-					<form:options items="${chucvuList}" itemValue="id"
-						itemLabel="tenchucvu" />
-				</form:select>
-			</div>
-			<button class="btn btn-info" type="submit">Sửa</button>
+			<button type="submit" class="btn btn-info">Submit</button>
 		</form:form>
 	</div>
 </body>

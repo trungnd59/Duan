@@ -25,6 +25,37 @@ public class LichSuController {
 	private MyUserDetailsService myUser;
 
 	/*
+	 * Get profile by userId
+	 */
+	@RequestMapping(value = { "/user/profile/{userId}" })
+	public String profileuser(Model model, @PathVariable("userId") String userId,
+			@ModelAttribute("profile") Users users) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String name = authentication.getName();
+		Users u = (Users) myUser.getUserByUsername(name);
+		model.addAttribute("thongtin", myUser.findUserById(u.getId()));
+		return "userThongtin/profile";
+	}
+
+	@RequestMapping("/user/presuaProfile/{id}")
+	public String suaProfile(ModelMap model, @PathVariable("id") int id) {
+		Users user = myUser.findUserById(id);
+		model.addAttribute("user", user);
+		return "userThongtin/profile-update";
+	}
+
+	/*
+	 * sửa profile
+	 */
+	@RequestMapping(value = "/user/suaProfile")
+	public String doUpdateProfile(@ModelAttribute("users") Users user, ModelMap model) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String name = authentication.getName();
+		myUser.updateUser(user);
+		return "redirect: /Duan/user/profile/" + name;
+	}
+
+	/*
 	 * Get list lịch sử
 	 */
 	@RequestMapping(value = { "/admin/listLichSu/{userId}" })
@@ -32,7 +63,6 @@ public class LichSuController {
 			@ModelAttribute("lichsulamviec") LichSuLamViec lichSuLamViec) {
 		model.addAttribute("listLichSu", lichSuService.findAllLichSu(userId));
 		for (LichSuLamViec ls : lichSuService.findAllLichSu(userId)) {
-			System.out.println(ls.getDiadiem());
 		}
 		return "adminLichsulamviec/listLichSu";
 	}
@@ -104,7 +134,6 @@ public class LichSuController {
 		}
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String name = authentication.getName();
-
 		return "redirect: /Duan/user/listLichSu/" + name;
 	}
 }

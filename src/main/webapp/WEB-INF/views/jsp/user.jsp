@@ -11,6 +11,6 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<h1>User Page</h1>
-	<li class="nav-item"><a class="nav-link" href="./user/listLichSu/${userId }">Lịch sử làm việc</a></li>
+	<%-- <li class="nav-item"><a class="nav-link" href="./user/listLichSu/${userId }">Lịch sử làm việc</a></li> --%>
 </body>
 </html>

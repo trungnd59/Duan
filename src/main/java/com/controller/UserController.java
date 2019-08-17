@@ -1,6 +1,8 @@
 package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +30,30 @@ public class UserController {
 	public String getListUser(Model model) {
 		model.addAttribute("listUser", userService.findAllUser());
 		return "adminUser/listUser";
+	}
+
+	@RequestMapping(value = { "/adminlistTaikhoan" })
+	public String getListTaikhoan(Model model) {
+		model.addAttribute("listTaikhoan", userService.findAllUser());
+		return "adminTaikhoan/listTaikhoan";
+	}
+
+	@RequestMapping("/admintaikhoan-update/{id}")
+	public String updatetaikhoan(@PathVariable int id, ModelMap model) {
+		Users user = userService.findUserById(id);
+		model.addAttribute("user", user);
+		model.addAttribute("listDepart", departService.findAllDeparts());
+		model.addAttribute("chucvuList", chucvuService.findAllChucvu());
+		return "adminTaikhoan/taikhoan-update";
+	}
+
+
+	
+	@RequestMapping("/adminupdateTaikhoan")
+	public String doUpdateTaikhoan(@ModelAttribute("Users") Users user, ModelMap model) {
+		userService.updateUser(user);
+		model.addAttribute("listUser", userService.findAllUser());
+		return "redirect:/admin/adminlistTaikhoan";
 	}
 
 	@RequestMapping("/adminuser-save")
