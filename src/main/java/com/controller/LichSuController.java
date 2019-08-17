@@ -23,10 +23,7 @@ public class LichSuController {
 	private LichSuService lichSuService;
 	@Autowired
 	private MyUserDetailsService myUser;
-	
-	
-	
-	
+
 	/*
 	 * Get profile by userId
 	 */
@@ -39,7 +36,25 @@ public class LichSuController {
 		model.addAttribute("thongtin", myUser.findUserById(u.getId()));
 		return "userThongtin/profile";
 	}
-	
+
+	@RequestMapping("/user/presuaProfile/{id}")
+	public String suaProfile(ModelMap model, @PathVariable("id") int id) {
+		Users user = myUser.findUserById(id);
+		model.addAttribute("user", user);
+		return "userThongtin/profile-update";
+	}
+
+	/*
+	 * sửa profile
+	 */
+	@RequestMapping(value = "/user/suaProfile")
+	public String doUpdateProfile(@ModelAttribute("users") Users user, ModelMap model) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String name = authentication.getName();
+		myUser.updateUser(user);
+		return "redirect: /Duan/user/profile/" + name;
+	}
+
 	/*
 	 * Get list lịch sử
 	 */
@@ -64,7 +79,6 @@ public class LichSuController {
 		model.addAttribute("listLichSu", lichSuService.findAllLichSu(u.getId()));
 		return "userLichsulamviec/listLichSu";
 	}
-	
 
 	@RequestMapping("/user/themcongviec/{userId}")
 	public String saveLichSu(@ModelAttribute("lichsulamviec") LichSuLamViec lichSuLamViec, ModelMap model,
@@ -120,7 +134,6 @@ public class LichSuController {
 		}
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String name = authentication.getName();
-
 		return "redirect: /Duan/user/listLichSu/" + name;
 	}
 }

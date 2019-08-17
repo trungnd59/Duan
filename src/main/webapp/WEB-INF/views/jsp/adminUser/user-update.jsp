@@ -17,7 +17,7 @@
 
 		<form:form action="${updateUser}" method="POST" modelAttribute="user"
 			acceptCharset="UTF-8">
-			<form:hidden path="id" readonly="true" />
+			<form:hidden path="id" />
 			<div class="form-group">
 				<label>Username</label>
 				<form:input class="form-control" path="username" />

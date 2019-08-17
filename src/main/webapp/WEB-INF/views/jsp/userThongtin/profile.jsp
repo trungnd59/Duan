@@ -36,5 +36,7 @@
 		<p>Phòng ban: ${thongtin.depart.tenphongban}</p>
 		<p>Chức vụ: ${thongtin.chucvu.tenchucvu}</p>
 	</div>
+	
+	<div><a href="../presuaProfile/${thongtin.id}">Chỉnh sửa</a> </div>
 </body>
 </html>
