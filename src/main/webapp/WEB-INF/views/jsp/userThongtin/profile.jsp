@@ -11,32 +11,43 @@
 <link href="<c:url value="/themes/css/datatables.min.css" />"
 	rel="stylesheet">
 <meta charset="UTF-8">
-<title>Danh sách tài khoản</title>
+<title>Thông tin cá nhân</title>
 </head>
 <body>
 
 	<c:url value="/admin/admintaikhoan-update" var="urlUpdate"></c:url>
 	<jsp:include page="../header.jsp"></jsp:include>
-	<br />
-
 	<div>
-		<p>Mã: ${thongtin.id}</p>
-		<p>Tên đầy đủ: ${thongtin.fullname}</p>
-
-		<p>Tên tài khoản: ${thongtin.username}</p>
-		<p>Ngày sinh: ${thongtin.ngaysinh}</p>
-		<p>Địa chỉ: ${thongtin.address}</p>
-		<p>Thông tin lương: ${thongtin.salary}$</p>
-		<p>Giới tính: ${thongtin.gender?'Nam':'Nữ'}</p>
-
-		<p>Email: ${thongtin.email}</p>
-
-		<p>Điện thoại: ${thongtin.phone}</p>
-
-		<p>Phòng ban: ${thongtin.depart.tenphongban}</p>
-		<p>Chức vụ: ${thongtin.chucvu.tenchucvu}</p>
+		<div class="card">
+			<img class="card-img-top"
+				src="<c:url value="/themes/img/profile.png" />" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Tên đầy đủ: ${thongtin.fullname}</h5>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"><p class="card-text">Mã nhân
+							viên: NV000${thongtin.id}</p></li>
+					<li class="list-group-item"><p>Tên tài khoản:
+							${thongtin.username}</p></li>
+					<li class="list-group-item"><p>Ngày sinh:
+							${thongtin.ngaysinh}</p></li>
+					<li class="list-group-item"><p>Địa chỉ:
+							${thongtin.address}</p></li>
+					<li class="list-group-item"><p>Thông tin lương:
+							${thongtin.salary}$</p></li>
+					<li class="list-group-item"><p>Giới tính:
+							${thongtin.gender?'Nam':'Nữ'}</p></li>
+					<li class="list-group-item"><p>Email: ${thongtin.email}</p></li>
+					<li class="list-group-item"><p>Điện thoại:
+							${thongtin.phone}</p></li>
+					<li class="list-group-item"><p>Phòng ban:
+							${thongtin.depart.tenphongban}</p></li>
+					<li class="list-group-item"><p>Chức vụ:
+							${thongtin.chucvu.tenchucvu}</p></li>
+				</ul>
+				<br> <a href="../presuaProfile/${thongtin.id}"
+					class="btn btn-primary nutchinhsuathongtin">Chỉnh sửa thông tin</a>
+			</div>
+		</div>
 	</div>
-	
-	<div><a href="../presuaProfile/${thongtin.id}">Chỉnh sửa</a> </div>
 </body>
 </html>

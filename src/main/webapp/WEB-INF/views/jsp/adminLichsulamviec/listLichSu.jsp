@@ -5,37 +5,49 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Thông tin lịch sử làm việc của nhân viên</title>
 </head>
 <body>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-md-1">STT</th>
-				<th class="col-md-2">Địa điểm</th>
-				<th class="col-md-2">Vai trò</th>
-				<th class="col-md-2">Ngày bắt đầu</th>
-				<th class="col-md-2">Ngày kết thúc</th>
-				<th class="col-md-3">Mô tả</th>
-			</tr>
-		</thead>
-		<tbody>
+	<jsp:include page="../headerAdmin.jsp"></jsp:include>
 
-			<c:forEach var="LichSuLamViec" items="${listLichSu }"
-				varStatus="index">
+
+
+	<div class="tableUserManager">
+		<div class="TitleLichsulamviec">
+			<h3>Thông tin lịch sử làm việc của nhân viên:</h3>
+		</div>
+		<table class="table table-striped" id="list">
+			<thead>
 				<tr>
-					<td scope="row"></td>
-					<td>${LichSuLamViec.diadiem}</td>
-					<td>${LichSuLamViec.vaitro}</td>
-					<td>${LichSuLamViec.startdate}</td>
-					<td>${LichSuLamViec.finishdate}</td>
-					<td>${LichSuLamViec.mota}</td>
+					<th>STT</th>
+					<th>Địa điểm</th>
+					<th>Vai trò</th>
+					<th>Ngày bắt đầu</th>
+					<th>Ngày kết thúc</th>
+					<th>Thông tin chi tiết</th>
 				</tr>
-				</br>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+			<c:set var="count" value="0" />
+				<c:forEach var="LichSuLamViec" items="${listLichSu }"
+					varStatus="index">
+					<tr>
+					<c:set var="count" value="${count+1}" />
+						<td scope="row">${count}</td>
+						<td>${LichSuLamViec.diadiem}</td>
+						<td>${LichSuLamViec.vaitro}</td>
+						<td>${LichSuLamViec.startdate}</td>
+						<td>${LichSuLamViec.finishdate}</td>
+						<td>${LichSuLamViec.mota}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#list').DataTable();
+		});
+	</script>
 </body>
-
-
 </html>

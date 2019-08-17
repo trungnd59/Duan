@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import com.entities.LichSuLamViec;
 import com.entities.Users;
 import com.service.LichSuService;
 import com.service.MyUserDetailsService;
+import com.service.ThanhtichService;
 
 @Controller
 public class LichSuController {
@@ -23,7 +26,18 @@ public class LichSuController {
 	private LichSuService lichSuService;
 	@Autowired
 	private MyUserDetailsService myUser;
-
+	@Autowired
+	ThanhtichService thanhtichService;
+	
+	/*
+	 * thành tích
+	 */
+	@RequestMapping("user/tongthanhtich/{userId}")
+	public String sumRecord(Model model, @PathVariable("userId") String userId) {
+		List<Object> list= thanhtichService.sumRecord();
+		model.addAttribute("arrays", list);
+		return "userThongtin/tongThanhtich";
+	}
 	/*
 	 * Get profile by userId
 	 */
