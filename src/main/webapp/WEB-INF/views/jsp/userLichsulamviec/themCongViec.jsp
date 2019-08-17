@@ -10,41 +10,40 @@
 <link href="<c:url value="/themes/css/datatables.min.css" />"
 	rel="stylesheet">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Thêm thông tin lịch sử làm việc</title>
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
-	<form:form id="form_id" action="/Duan/user/themcongviec/${userId}"
-		method="POST" modelAttribute="lichsulamviec" acceptCharset="UTF-8">
-		<div class="form-row">
-
-			<div class="form-group col-md-6">
-				<label for="inputEmail4">Địa điểm</label>
+	<div class="formInsertUser">
+		<form:form id="form_id" action="/Duan/user/themcongviec/${userId}"
+			method="POST" modelAttribute="lichsulamviec" acceptCharset="UTF-8">
+			<div class="form-group">
+				<label>Địa điểm</label>
 				<form:input class="form-control" path="diadiem" />
 			</div>
-			<div class="form-group col-md-6">
-				<label for="inputEmail4">Vai trò</label>
+			<div class="form-group">
+				<label>Vai trò</label>
 				<form:input class="form-control" path="vaitro" />
 			</div>
-			<div class="form-group col-md-6">
-				<label for="inputEmail4">Ngày bắt đầu</label>
+			<div class="form-group">
+				<label>Ngày bắt đầu</label>
 				<form:input class="form-control" type="date" path="startdate" />
 			</div>
-			<div class="form-group col-md-6">
-				<label for="inputEmail4">Ngày kết thúc</label>
+			<div class="form-group">
+				<label>Ngày kết thúc</label>
 				<form:input class="form-control" type="date" path="finishdate" />
 			</div>
-			<div class="form-group col-md-6">
-				<label for="inputEmail4">Mô tả</label>
+			<div class="form-group">
+				<label>Thông tin chi tiết</label>
 				<form:input class="form-control" path="mota" />
 			</div>
-			<div class="form-group col-md-2">
-				<button type="submit" id="create" class="btn btn-primary">Create</button>
+			<div class="form-group">
+				<button type="submit" id="create" class="btn btn-primary">Thêm mới</button>
 
 			</div>
-		</div>
 
-	</form:form>
+		</form:form>
+	</div>
 </body>
 
 
