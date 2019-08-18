@@ -32,8 +32,8 @@ public class UsersRoles implements Serializable {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "role")
-
 	private Role role;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user")
 	private Users users;
