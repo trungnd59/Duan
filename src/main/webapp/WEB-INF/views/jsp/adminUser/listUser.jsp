@@ -19,11 +19,10 @@
 	<c:url value="/admin/adminuser-update" var="urlUpdate"></c:url>
 	<c:url value="/admin/adminUserRole-save" var="urlUserRole"></c:url>
 	<c:url value="/admin/userDelete" var="urlDelete"></c:url>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
 
 	<div class="wrapper">
 		<jsp:include page="../sidebar.jsp"></jsp:include>
-		<div class="noidung">
+		<div class="main">
 			<div class="tableUserManagerUser">
 				<div>
 					<a href="${urlSave}" class="btn btn-info"><i class="fa fa-plus"></i>&nbsp;

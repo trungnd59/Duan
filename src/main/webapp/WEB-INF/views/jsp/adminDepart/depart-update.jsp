@@ -6,30 +6,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update user</title>
+<title>Sửa thông tin phòng ban</title>
 </head>
 <body>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-	<div class="formInsertUser">
-		<h1>Sửa thông phòng ban</h1>
-		<br /> <br />
-		<c:url value="/admin/adminupdateDepart" var="updateDepart" />
-
-		<form:form action="${updateDepart}" method="POST" modelAttribute="depart"
-			acceptCharset="UTF-8">
-			<form:hidden path="id" readonly="true" />
-			<div class="form-group">
-				<label>Tên phòng ban</label>
-				<form:input class="form-control" path="tenphongban" />
+	<div class="wrapper">
+		<jsp:include page="../sidebar.jsp"></jsp:include>
+		<div class="main">
+			<div class="tableUserManagerUser">
+				<h1>Sửa thông phòng ban</h1>
+				<br /> <br />
+				<c:url value="/admin/adminupdateDepart" var="updateDepart" />
+				<form:form action="${updateDepart}" method="POST"
+					modelAttribute="depart" acceptCharset="UTF-8">
+					<form:hidden path="id" readonly="true" />
+					<div class="col-md-3 form-group">
+						<label>Tên phòng ban</label>
+						<form:input class="form-control" placeholder="Tên phòng ban"
+							path="tenphongban" />
+					</div>
+					<div class="col-md-3 form-group">
+						<label>Chức năng</label>
+						<form:input class="form-control" placeholder="Chức năng chính"
+							path="chucnang" />
+					</div>
+					<div class="col-md-3">
+						<button type="submit" class="btn btn-info">
+							<i class="fa fa-plus"></i>&nbsp; Xác nhận
+						</button>
+						<a href="#" class="btn btn-secondary" onclick="history.back();">
+							<i class="fa fa-ban"></i>&nbsp; Quay lại
+						</a>
+					</div>
+				</form:form>
 			</div>
-			<div class="form-group">
-				<label>Chức năng</label>
-				<form:input class="form-control" path="chucnang" />
-			</div>			
-			<button class="btn btn-info" type="submit">Chỉnh Sửa</button>
-			<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
-				lại</a>
-		</form:form>
+		</div>
 	</div>
+
+
 </body>
 </html>

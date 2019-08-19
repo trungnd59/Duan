@@ -19,15 +19,53 @@
 </head>
 <body>
 	<div class="sidenav">
-		<a href="#about">About</a> <a href="#services">Services</a> <a
-			href="#clients">Clients</a> <a href="#contact">Contact</a>
+		<form class="form-inline my-2 my-lg-0"
+			action="<c:url value="/j_duan_logout" />" method="post">
+			<div class="infoMenu">
+				<b>Xin chào: ${pageContext.request.userPrincipal.name}</b>
+
+			</div>
+			<div class="buttonlogout">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+				<button class="btn btn-info" type="submit">
+					Thoát&nbsp; <i class="fa fa-sign-out"></i>
+				</button>
+			</div>
+		</form>
+		<a href="../admin"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Trang
+			chính</a> <a href="<c:url value="/admin/adminlistUser"/>"><i
+			class="fa fa-users" aria-hidden="true"></i>&nbsp;Quản lý thông tin
+			nhân viên</a> <a href="<c:url value="/admin/adminlistDepart"/>"><i
+			class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;Quản lý Phòng
+			ban</a> <a href="<c:url value="/admin/adminlistChucvu"/>"><i
+			class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;Quản lý chức
+			vụ</a>
 		<button class="dropdown-btn">
-			Dropdown <i class="fa fa-caret-down"></i>
+			<i class="fa fa-trophy" aria-hidden="true"></i>&nbsp; Khen thưởng -
+			Kỷ luật <i class="fa fa-caret-down"></i>
 		</button>
 		<div class="dropdown-container">
-			<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+			<a href="<c:url value="/admin/adminlistRecord"/>"><i
+				class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;Thêm khen
+				thưởng - kỷ luật</a> <a href="<c:url value="/admin/adminreport"/>"><i
+				class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Tổng kết thành
+				tích</a>
 		</div>
-		<a href="#contact">Search</a>
+		<a href="<c:url value="/admin/adminTongluong"/>"><i
+			class="fa fa-money" aria-hidden="true"></i>&nbsp;Tổng lương</a>
+
+		<button class="dropdown-btn">
+			<i class="fa fa-user" aria-hidden="true"></i>&nbsp; Quản lý tài khoản
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="<c:url value="/admin/adminlistTaikhoan"/>"><i
+				class="fa fa-sun-o" aria-hidden="true"></i>&nbsp;Tình trạng tài
+				khoản</a> <a href="<c:url value="/admin/adminListUserRole"/>"><i
+				class="fa fa-universal-access" aria-hidden="true"></i>&nbsp;Phân
+				quyền</a>
+		</div>
 	</div>
 
 	<script>
