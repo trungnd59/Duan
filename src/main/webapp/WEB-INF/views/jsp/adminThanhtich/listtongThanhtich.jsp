@@ -11,53 +11,53 @@
 <link href="<c:url value="/themes/css/datatables.min.css" />"
 	rel="stylesheet">
 <meta charset="UTF-8">
-<title>Danh sách tài khoản</title>
+<title>Tổng kết thành tích - kỷ luật</title>
 </head>
 <body>
+	<div class="wrapper">
+		<jsp:include page="../sidebar.jsp"></jsp:include>
+		<div class="main">
+			<c:url value="/admin/adminThanhtich-save" var="urlSave" />
 
-	<c:url value="/admin/adminThanhtich-save" var="urlSave" />
-	<%-- <c:url value="/admin/adminChucvu-update" var="urlUpdate"></c:url> --%>
-	<%-- 	<c:url value="/admin/chucvuDelete" var="urlDelete"></c:url> --%>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-	<br />
-
-	<div class="tableUserManager">
-		<div>
-			<a href="${urlSave}" class="btn btn-info">Thêm thành tích hoặc kỷ
-				luật</a>
-		</div>
-		<br />
-		<table class="table table-striped" id="list">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Mã nhân viên</th>
-					<th>Tổng thành tích</th>
-					<th>Tổng kỷ luật</th>
-					<th>Tổng kết</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:if test="${not empty arrays}">
-					<c:set var="count" value="0" />
-					<c:forEach var="a" items="${arrays}">
+			<div class="tableUserManagerUser">
+				<div>
+					<a href="${urlSave}" class="btn btn-info"><i class="fa fa-plus"></i>&nbsp;Thêm
+						thành tích hoặc kỷ luật</a>
+				</div>
+				<br />
+				<table class="table table-striped" id="list">
+					<thead>
 						<tr>
-							<c:set var="count" value="${count+1}" />
-							<th>${count}</th>
-							<td>${a[0].fullname}</td>
-							<td>${a[1]}</td>
-							<td>${a[2]}</td>
-							<td>${a[1] - a[2]}</td>
+							<th>#</th>
+							<th>Mã nhân viên</th>
+							<th>Tổng thành tích</th>
+							<th>Tổng kỷ luật</th>
+							<th>Tổng kết</th>
 						</tr>
-					</c:forEach>
-				</c:if>
-			</tbody>
-		</table>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#list').DataTable();
-			});
-		</script>
+					</thead>
+					<tbody>
+						<c:if test="${not empty arrays}">
+							<c:set var="count" value="0" />
+							<c:forEach var="a" items="${arrays}">
+								<tr>
+									<c:set var="count" value="${count+1}" />
+									<th>${count}</th>
+									<td>${a[0].fullname}</td>
+									<td>${a[1]}</td>
+									<td>${a[2]}</td>
+									<td>${a[1] - a[2]}</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+					</tbody>
+				</table>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#list').DataTable();
+					});
+				</script>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,8 +1,6 @@
 package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.entities.Users;
+import com.entities.UsersRoles;
 import com.service.ChucvuService;
 import com.service.DepartService;
 import com.service.MyUserDetailsService;
+import com.service.UserRoleService;
 
 @Controller
 @RequestMapping("/admin")
@@ -25,6 +25,9 @@ public class UserController {
 	private DepartService departService;
 	@Autowired
 	private ChucvuService chucvuService;
+
+	@Autowired
+	private UserRoleService userroleService;
 
 	@RequestMapping(value = { "/adminlistUser" })
 	public String getListUser(Model model) {
@@ -47,8 +50,6 @@ public class UserController {
 		return "adminTaikhoan/taikhoan-update";
 	}
 
-
-	
 	@RequestMapping("/adminupdateTaikhoan")
 	public String doUpdateTaikhoan(@ModelAttribute("Users") Users user, ModelMap model) {
 		userService.updateUser(user);
@@ -66,10 +67,14 @@ public class UserController {
 	}
 
 	@RequestMapping("/adminsaveUser")
-	public String saveUser(@ModelAttribute("user") Users user, ModelMap model) {
+	public String dosaveUser(@ModelAttribute("user") Users user, ModelMap model,
+			@ModelAttribute("userrole") UsersRoles usersRoles) {
 		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(10)));
 		userService.saveUser(user);
 		model.addAttribute("listUser", userService.findAllUser());
+		usersRoles.setUsers(user);
+		userroleService.saveUsersRoles(usersRoles);
+
 		return "redirect:/admin/adminlistUser";
 	}
 

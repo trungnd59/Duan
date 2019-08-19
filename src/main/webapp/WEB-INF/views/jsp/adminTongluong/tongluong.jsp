@@ -14,13 +14,14 @@
 <title>Tổng lương</title>
 </head>
 <body>
+	<div class="wrapper">
+		<jsp:include page="../sidebar.jsp"></jsp:include>
+		<div class="main">
+			<div class="tableUserManagerUser">
+				<h1>Tổng lương phải trả cho nhân viên ${tongluong[0]} $</h1>
 
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-	<br />
-
-	<div class="tableUserManager">
-		<h1>Tổng lương phải trả cho nhân viên ${tongluong[0]} $</h1>
-
+			</div>
+		</div>
 	</div>
 </body>
 </html>

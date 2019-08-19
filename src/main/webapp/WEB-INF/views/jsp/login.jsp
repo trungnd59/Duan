@@ -6,6 +6,9 @@
 
 <html>
 <head>
+<link
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet">
 <link href="<c:url value="/themes/css/bootstrap.min.css" />"
 	rel="stylesheet">
 <link href="<c:url value="/themes/css/style.css" />" rel="stylesheet">
@@ -14,31 +17,43 @@
 <meta charset="UTF-8">
 <title>login</title>
 </head>
-<body>
+<body style="background: linear-gradient(to right, #1d4350, #a43931);">
 	<div class="content">
 		<div class="mainContent">
-			<div class="alert alert-success" role="alert">
-				<b>${message}</b>
-			</div>
+
 			<div class="formlogin">
+				<h1 class="tieudedangnhap">Đăng nhập hệ thống</h1>
 				<form name='loginForm' action="<c:url value='j_duan_login' />"
 					method='POST'>
 					<div class="form-group">
-						<label>Tên tài khoản</label> <input type="text"
-							class="form-control" placeholder="Nhập tên tài khoản"
-							name="username"> <small class="form-text text-muted">Lưu
-							ý tài khoản phải được kích hoạt mới có thể đăng nhập được hệ
-							thống!</small>
+						<div class="input-group-prepend">
+							<span class="icon" id="basic-addon1"><i class="fa fa-user"
+								aria-hidden="true"></i></span>
+						</div>
+						<input type="text" class="form-control onhap"
+							placeholder="Nhập tên tài khoản" name="username"
+							aria-describedby="basic-addon1">
+						<p style="color: red; float: left;">*</p>
+						<small class="form-text text-muted">Lưu ý tài khoản phải
+							được kích hoạt mới có thể đăng nhập được hệ thống!</small>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Mật khẩu</label> <input
-							type="password" class="form-control" placeholder="Mật khẩu"
-							name='password' />
+						<div class="input-group-prepend">
+							<span class="icon" id="basic-addon1"><i
+								class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+						</div>
+						<input type="password" class="form-control onhap"
+							placeholder="Mật khẩu" name='password' />
 					</div>
+
 					<input type="submit" name="submit" value="Đăng nhập"
-						class="btn btn-primary btn-lg btn-block" /> <input type="hidden"
-						name="${_csrf.parameterName}" value="${_csrf.token}" />
+						class="btn btn-primary btn-lg btn-block nutdangnhap" /> <input
+						type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
+				<div class="thongbaodangnhap">
+					<b>${message}</b>
+				</div>
+
 			</div>
 		</div>
 	</div>

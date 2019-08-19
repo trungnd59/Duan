@@ -6,29 +6,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>save user</title>
+<title>Thêm mới phòng ban</title>
 </head>
 <body>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-
-
-	<c:url value="/admin/adminsaveDepart" var="saveDepart"></c:url>
-	<div class="formInsertUser">
-		<h1>Thêm mới phòng ban</h1>
-		<br/>
-		<br/>
-		<form:form action="${saveDepart}" method="POST" modelAttribute="depart"
-			acceptCharset="UTF-8">
-			<div class="form-group">
-				<label>Ten phòng ban</label>
-				<form:input class="form-control" path="tenphongban" />
+	<div class="wrapper">
+		<jsp:include page="../sidebar.jsp"></jsp:include>
+		<div class="main">
+			<c:url value="/admin/adminsaveDepart" var="saveDepart"></c:url>
+			<div class="tableUserManagerUser">
+				<h1>Thêm mới phòng ban</h1>
+				<form:form action="${saveDepart}" method="POST"
+					modelAttribute="depart" acceptCharset="UTF-8">
+					<div class="col-md-3 form-group">
+						<label>Tên phòng ban</label>
+						<form:input class="form-control" placeholder="Tên phòng ban" path="tenphongban" />
+					</div>
+					<div class="col-md-3 form-group">
+						<label>Chức năng</label>
+						<form:input class="form-control" placeholder="Chức năng chính" path="chucnang" />
+					</div>
+					<div class="col-md-3">
+						<button type="submit" class="btn btn-info">
+								<i class="fa fa-plus"></i>&nbsp; Xác nhận
+							</button>
+							<a href="#" class="btn btn-secondary" onclick="history.back();">
+								<i class="fa fa-ban"></i>&nbsp; Quay lại
+							</a>
+					</div>
+				</form:form>
 			</div>
-			<div class="form-group">
-				<label>Chức năng</label>
-				<form:input class="form-control" path="chucnang" />
-			</div>			
-			<button type="submit" class="btn btn-info">Submit</button>
-		</form:form>
+		</div>
 	</div>
 </body>
 </html>

@@ -6,27 +6,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Thêm chức vụ mới</title>
+<title>Phân quyền</title>
 </head>
 <body>
 	<div class="wrapper">
-		<c:url value="/admin/adminsaveChucvu" var="saveChucvu"></c:url>
+		<c:url value="/admin/adminupdateUserRole" var="save"></c:url>
 		<jsp:include page="../sidebar.jsp"></jsp:include>
 		<div class="main">
 			<div class="tableUserManagerUser">
-				<h1>Thêm mới chức vụ</h1>
-				<br /> <br />
-				<form:form action="${saveChucvu}" method="POST"
-					modelAttribute="chucvu" acceptCharset="UTF-8">
+				<form:form action="${save}" method="POST" modelAttribute="userrole"
+					acceptCharset="UTF-8">
+					<form:hidden path="id" />
+					<form:hidden path="users.id" />
 					<div class="col-md-3 form-group">
-						<label>Tên chức vụ</label>
-						<form:input class="form-control" placeholder="Tên chức vụ"
-							path="tenchucvu" />
-					</div>
-					<div class="col-md-3 form-group">
-						<label>Công việc</label>
-						<form:input class="form-control" placeholder="Công việc chính"
-							path="congviec" />
+						<label>Chức năng</label>
+						<form:select class="form-control" path="role.id">
+							<form:option value="0">Chọn loại quyền</form:option>
+							<form:options items="${listRole}" itemValue="id" itemLabel="name" />
+						</form:select>
 					</div>
 					<div class="col-md-3">
 						<button type="submit" class="btn btn-info">

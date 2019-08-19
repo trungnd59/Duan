@@ -6,10 +6,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin Page</title>
+<title>Trang quản lý</title>
 </head>
 <body>
-	<jsp:include page="headerAdmin.jsp"></jsp:include>
-	<h1>Admin Page</h1>
+	<div class="wrapper">
+		<jsp:include page="sidebar.jsp"></jsp:include>
+		<div class="main">
+			<div class="tableUserManagerUser">
+				<h1>Trang quản lý</h1>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -9,33 +9,43 @@
 <title>Update user</title>
 </head>
 <body>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-	<div class="formInsertUser">
-		<h1>Sửa thông tin tài khoản</h1>
-		<br /> <br />
-		<c:url value="/admin/adminupdateTaikhoan" var="updateUser" />
-		<form:form action="${updateUser}" method="POST" modelAttribute="user"
-			acceptCharset="UTF-8">
-			<form:hidden path="id" />
-			<div class="form-group">
-				<label>Username</label>
-				<form:input class="form-control" path="username" />
+	<div class="wrapper">
+		<jsp:include page="../sidebar.jsp"></jsp:include>
+		<div class="main">
+			<div class="tableUserManagerUser">
+				<h1>Sửa thông tin tài khoản</h1>
+				<c:url value="/admin/adminupdateTaikhoan" var="updateUser" />
+				<form:form action="${updateUser}" method="POST"
+					modelAttribute="user" acceptCharset="UTF-8">
+					<form:hidden path="id" />
+					<div class="col-md-3 form-group">
+						<label>Username</label>
+						<form:input class="form-control" path="username" />
+					</div>
+					<div class="col-md-3 form-group">
+						<label>Full name</label>
+						<form:input class="form-control" path="fullname" />
+					</div>
+					<div class="col-md-3 form-group selectFormAddUser">
+						<label>Kích hoạt</label>
+						<form:select class="form-control" path="enabled">
+							<form:option value="1">Kích hoạt</form:option>
+							<form:option value="0">Không kích hoạt</form:option>
+						</form:select>
+					</div>
+					<form:hidden path="gender" />
+					<form:hidden path="password" />
+					<div class="col-md-3">
+						<button type="submit" class="btn btn-info">
+							<i class="fa fa-plus"></i>&nbsp; Xác nhận
+						</button>
+						<a href="#" class="btn btn-secondary" onclick="history.back();">
+							<i class="fa fa-ban"></i>&nbsp; Quay lại
+						</a>
+					</div>
+				</form:form>
 			</div>
-			<div class="form-group">
-				<label>Full name</label>
-				<form:input class="form-control" path="fullname" />
-			</div>
-			<div class="form-group selectFormAddUser">
-				<label>Kích hoạt</label>
-				<form:select class="form-control" path="enabled">
-					<form:option value="1">Kích hoạt</form:option>
-					<form:option value="0">Không kích hoạt</form:option>
-				</form:select>
-			</div>
-			<form:hidden path="gender" />
-			<form:hidden path="password" />
-			<button class="btn btn-info" type="submit">Sửa</button>
-		</form:form>
+		</div>
 	</div>
 </body>
 </html>
