@@ -31,10 +31,9 @@ public class UserRolesController {
 		return "adminUserRole/listUserRoles";
 	}
 
-	@RequestMapping(value = { "/adminUserRole-save" })
-	public String preAddRole(Model model) {
-		UsersRoles usersRoles = new UsersRoles();
-		model.addAttribute("listUser", myUser.findAllUser());
+	@RequestMapping(value = { "/adminUserRole-save/{id}" })
+	public String preAddRole(Model model, @PathVariable int id) {
+		UsersRoles usersRoles = userrolesService.findByIdUsersRoles(id);
 		model.addAttribute("listRole", roleService.findAllRole());
 		model.addAttribute("userrole", usersRoles);
 		return "adminUserRole/addUserRoles";

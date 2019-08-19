@@ -23,7 +23,7 @@
 
 	<div class="tableUserManager">
 		<div>
-			<a href="${urlSave}" class="btn btn-info">Thêm thành tích hoặc kỷ
+			<a href="${urlSave}" class="btn btn-info"><i class="fa fa-plus"></i>&nbsp;Thêm thành tích hoặc kỷ
 				luật</a>
 		</div>
 		<br />

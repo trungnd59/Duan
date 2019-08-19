@@ -38,8 +38,10 @@
 				<form:input class="form-control" path="mota" />
 			</div>
 			<div class="form-group">
-				<button type="submit" id="create" class="btn btn-primary">Thêm mới</button>
-
+				<button type="submit" id="create" class="btn btn-primary">Thêm
+					mới</button>
+				<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
+					lại</a>
 			</div>
 
 		</form:form>

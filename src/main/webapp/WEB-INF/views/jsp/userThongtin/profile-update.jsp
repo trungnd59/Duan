@@ -17,9 +17,9 @@
 			modelAttribute="user" acceptCharset="UTF-8">
 			<form:hidden path="id" />
 			<form:hidden path="enabled" />
-			
+
 			<form:hidden path="password" />
-			
+
 			<form:hidden path="chucvu.id" />
 			<form:hidden path="depart.id" />
 			<form:hidden path="salary" />
@@ -55,7 +55,9 @@
 				<form:input type="number" pattern="[0-9]*" class="form-control"
 					path="phone" />
 			</div>
-			<button type="submit" class="btn btn-info">Submit</button>
+			<button type="submit" class="btn btn-info">Cập nhật</button>
+			<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
+				lại</a>
 		</form:form>
 	</div>
 </body>

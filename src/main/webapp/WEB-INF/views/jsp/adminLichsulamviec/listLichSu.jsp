@@ -20,7 +20,7 @@
 			<thead>
 				<tr>
 					<th>STT</th>
-					<th>Địa điểm</th>
+					<th>Tên công ty</th>
 					<th>Vai trò</th>
 					<th>Ngày bắt đầu</th>
 					<th>Ngày kết thúc</th>

@@ -23,7 +23,7 @@
 
 	<div class="tableUserManager">
 		<div>
-			<a href="${urlSave}" class="btn btn-info">Thêm chức vụ</a>
+			<a href="${urlSave}" class="btn btn-info"><i class="fa fa-plus"></i>&nbsp;Thêm chức vụ</a>
 		</div>
 		<br />
 		<table class="table table-striped" id="list">
@@ -47,9 +47,9 @@
 							<td>${chucvu.tenchucvu}</td>
 							<td>${chucvu.congviec}</td>
 							
-							<td><a class="btn btn-secondary"
-								href="${urlUpdate}/${chucvu.id}">Edit</a> | <a
-								class="btn btn-danger" href="${urlDelete}/${chucvu.id}">Delete</a></td>
+							<td><a class="btn btn-primary"
+								href="${urlUpdate}/${chucvu.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> | <a
+								class="btn btn-danger" href="${urlDelete}/${chucvu.id}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
 						</tr>
 					</c:forEach>
 				</c:if>

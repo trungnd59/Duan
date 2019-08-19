@@ -16,10 +16,14 @@
 <body>
 
 	<c:url value="/admin/admintaikhoan-update" var="urlUpdate"></c:url>
+	
+	<c:url value="/admin/adminListUserRole" var="urlUserRole"></c:url>
 	<jsp:include page="../headerAdmin.jsp"></jsp:include>
 	<br />
-
 	<div class="tableUserManager">
+		<div>
+			<a href="${urlUserRole}" class="btn btn-info">Phân quyền</a>
+		</div>
 		<table class="table table-striped" id="listUser">
 			<thead>
 				<tr>
@@ -42,8 +46,8 @@
 							<td>${user.username}</td>
 							<td>${user.fullname}</td>
 							<td>${user.enabled?'Đã kích hoạt':'Chưa kích hoạt'}</td>
-							<td><a class="btn btn-secondary"
-								href="${urlUpdate}/${user.id}">Edit</a></td>
+							<td><a class="btn btn-primary"
+								href="${urlUpdate}/${user.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
 						</tr>
 					</c:forEach>
 				</c:if>

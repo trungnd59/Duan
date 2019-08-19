@@ -22,10 +22,6 @@
 	<br />
 
 	<div class="tableUserManager">
-		<div>
-			<a href="${urlSave}" class="btn btn-info">Phân quyền cho tài khoản</a>
-		</div>
-		<br />
 		<table class="table table-striped" id="list">
 			<thead>
 				<tr>
@@ -46,10 +42,9 @@
 							<td>${userrole.id}</td>
 							<td>${userrole.users.fullname}</td>
 							<td>${userrole.role.name}</td>
-							
-							<td><a class="btn btn-secondary"
-								href="${urlUpdate}/${userrole.id}">Edit</a> | <a
-								class="btn btn-danger" href="${urlDelete}/${userrole.id}">Delete</a></td>
+
+							<td><a class="btn btn-primary"
+								href="${urlUpdate}/${userrole.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
 						</tr>
 					</c:forEach>
 				</c:if>

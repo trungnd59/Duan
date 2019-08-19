@@ -10,11 +10,12 @@
 </head>
 
 <body>
-	<c:url value="../themcongviec/${userId }" var="urlThemcongviec" />
+	
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div class="tableUserManager">
+	<c:url value="../prethemcongviec/${userId }" var="urlThemcongviec" />
 		<div class="button-intop">
-			<a class="btn btn-primary" href="${urlThemcongviec }">Thêm công
+			<a class="btn btn-primary" href="${urlThemcongviec }"><i class="fa fa-plus"></i>&nbsp; Thêm công
 				việc</a>
 		</div>
 
@@ -40,10 +41,10 @@
 						<td id="startdate${LichSuLamViec.id}">${LichSuLamViec.startdate}</td>
 						<td id="finishdate${LichSuLamViec.id}">${LichSuLamViec.finishdate}</td>
 						<td id="mota${LichSuLamViec.id}">${LichSuLamViec.mota}</td>
-						<td><a class="btn btn-secondary"
-							href="../presuacongviec/${LichSuLamViec.id}">Sửa</a> <a
+						<td><a class="btn btn-primary"
+							href="../presuacongviec/${LichSuLamViec.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <a
 							class="btn btn-danger"
-							href="./lichsudelete/${ LichSuLamViec.id }">Xóa</a></td>
+							href="./lichsudelete/${ LichSuLamViec.id }"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

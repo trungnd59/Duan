@@ -28,16 +28,17 @@ public class LichSuController {
 	private MyUserDetailsService myUser;
 	@Autowired
 	ThanhtichService thanhtichService;
-	
+
 	/*
 	 * thành tích
 	 */
 	@RequestMapping("user/tongthanhtich/{userId}")
 	public String sumRecord(Model model, @PathVariable("userId") String userId) {
-		List<Object> list= thanhtichService.sumRecord();
+		List<Object> list = thanhtichService.sumRecord();
 		model.addAttribute("arrays", list);
 		return "userThongtin/tongThanhtich";
 	}
+
 	/*
 	 * Get profile by userId
 	 */
@@ -94,9 +95,9 @@ public class LichSuController {
 		return "userLichsulamviec/listLichSu";
 	}
 
-	@RequestMapping("/user/themcongviec/{userId}")
+	@RequestMapping("/user/prethemcongviec/{userId}")
 	public String saveLichSu(@ModelAttribute("lichsulamviec") LichSuLamViec lichSuLamViec, ModelMap model,
-			@PathVariable("userId") int userId) {
+			@PathVariable("userId") String userId) {
 
 		model.addAttribute("userId", userId);
 		return "userLichsulamviec/themCongViec";
@@ -105,15 +106,15 @@ public class LichSuController {
 	/*
 	 * POST list công việc
 	 */
-	@PostMapping("/user/themcongviec/{username}")
+	@PostMapping("/user/themcongviec/{userId}")
 	public String saveLichSus(@ModelAttribute("lichsulamviec") LichSuLamViec lichSuLamViec, ModelMap model,
-			@PathVariable("username") String username) {
+			@PathVariable("userId") String userId) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String name = authentication.getName();
 		Users u = (Users) myUser.getUserByUsername(name);
 		lichSuLamViec.setUserlichsu(u);
 		lichSuService.saveLichSu(lichSuLamViec);
-		return "redirect: /Duan/user/listLichSu/" + username;
+		return "redirect: /Duan/user/listLichSu/" + userId;
 	}
 
 	@RequestMapping("/user/presuacongviec/{id}")

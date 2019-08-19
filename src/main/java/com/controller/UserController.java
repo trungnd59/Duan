@@ -25,9 +25,9 @@ public class UserController {
 	private DepartService departService;
 	@Autowired
 	private ChucvuService chucvuService;
-	
+
 	@Autowired
-	private UserRoleService userrolesService;
+	private UserRoleService userroleService;
 
 	@RequestMapping(value = { "/adminlistUser" })
 	public String getListUser(Model model) {
@@ -50,8 +50,6 @@ public class UserController {
 		return "adminTaikhoan/taikhoan-update";
 	}
 
-
-	
 	@RequestMapping("/adminupdateTaikhoan")
 	public String doUpdateTaikhoan(@ModelAttribute("Users") Users user, ModelMap model) {
 		userService.updateUser(user);
@@ -69,11 +67,14 @@ public class UserController {
 	}
 
 	@RequestMapping("/adminsaveUser")
-	public String dosaveUser(@ModelAttribute("user") Users user, ModelMap model) {
+	public String dosaveUser(@ModelAttribute("user") Users user, ModelMap model,
+			@ModelAttribute("userrole") UsersRoles usersRoles) {
 		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(10)));
 		userService.saveUser(user);
 		model.addAttribute("listUser", userService.findAllUser());
-		
+		usersRoles.setUsers(user);
+		userroleService.saveUsersRoles(usersRoles);
+
 		return "redirect:/admin/adminlistUser";
 	}
 

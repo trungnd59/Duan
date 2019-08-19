@@ -15,10 +15,9 @@
 	<c:url value="/admin/adminsaveDepart" var="saveDepart"></c:url>
 	<div class="formInsertUser">
 		<h1>Thêm mới phòng ban</h1>
-		<br/>
-		<br/>
-		<form:form action="${saveDepart}" method="POST" modelAttribute="depart"
-			acceptCharset="UTF-8">
+		<br /> <br />
+		<form:form action="${saveDepart}" method="POST"
+			modelAttribute="depart" acceptCharset="UTF-8">
 			<div class="form-group">
 				<label>Ten phòng ban</label>
 				<form:input class="form-control" path="tenphongban" />
@@ -26,8 +25,10 @@
 			<div class="form-group">
 				<label>Chức năng</label>
 				<form:input class="form-control" path="chucnang" />
-			</div>			
-			<button type="submit" class="btn btn-info">Submit</button>
+			</div>
+			<button type="submit" class="btn btn-info">Thêm mới</button>
+			<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
+				lại</a>
 		</form:form>
 	</div>
 </body>

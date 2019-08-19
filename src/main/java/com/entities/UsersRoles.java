@@ -20,7 +20,6 @@ public class UsersRoles implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "id", unique = true, nullable = false)
 	private Integer id;
 
@@ -33,7 +32,7 @@ public class UsersRoles implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "role")
 	private Role role;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user")
 	private Users users;
@@ -44,6 +43,22 @@ public class UsersRoles implements Serializable {
 	public UsersRoles(Role role, Users users) {
 		this.role = role;
 		this.users = users;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public Integer getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
 	}
 
 	public Integer getId() {
@@ -70,20 +85,20 @@ public class UsersRoles implements Serializable {
 		this.users = users;
 	}
 
-	public Integer getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
-
-	public Integer getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(Integer roleId) {
-		this.roleId = roleId;
-	}
+//	public Integer getUserId() {
+//		return userId;
+//	}
+//
+//	public void setUserId(Integer userId) {
+//		this.userId = userId;
+//	}
+//
+//	public Integer getRoleId() {
+//		return roleId;
+//	}
+//
+//	public void setRoleId(Integer roleId) {
+//		this.roleId = roleId;
+//	}
 
 }

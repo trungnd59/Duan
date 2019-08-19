@@ -80,7 +80,8 @@
 						itemLabel="tenchucvu" />
 				</form:select>
 			</div>
-			<button type="submit" class="btn btn-info">Submit</button>
+			<button type="submit" class="btn btn-info"> <i class="fa fa-plus"></i>&nbsp; Xác nhận</button>
+			<a href="#" class="btn btn-secondary" onclick="history.back();"> <i class="fa fa-ban"></i>&nbsp; Hủy</a>
 		</form:form>
 	</div>
 </body>

@@ -11,7 +11,7 @@
 <body>
 	<jsp:include page="../headerAdmin.jsp"></jsp:include>
 	<div class="formInsertUser">
-		<h1>Sửa thông tin tài khoản</h1>
+		<h1>Sửa thông phòng ban</h1>
 		<br /> <br />
 		<c:url value="/admin/adminupdateDepart" var="updateDepart" />
 
@@ -19,14 +19,16 @@
 			acceptCharset="UTF-8">
 			<form:hidden path="id" readonly="true" />
 			<div class="form-group">
-				<label>Ten phòng ban</label>
+				<label>Tên phòng ban</label>
 				<form:input class="form-control" path="tenphongban" />
 			</div>
 			<div class="form-group">
 				<label>Chức năng</label>
 				<form:input class="form-control" path="chucnang" />
 			</div>			
-			<button class="btn btn-info" type="submit">Sửa</button>
+			<button class="btn btn-info" type="submit">Chỉnh Sửa</button>
+			<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
+				lại</a>
 		</form:form>
 	</div>
 </body>
