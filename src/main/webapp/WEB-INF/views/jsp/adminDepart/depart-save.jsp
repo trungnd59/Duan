@@ -15,7 +15,6 @@
 			<c:url value="/admin/adminsaveDepart" var="saveDepart"></c:url>
 			<div class="tableUserManagerUser">
 				<h1>Thêm mới phòng ban</h1>
-				<br /> <br />
 				<form:form action="${saveDepart}" method="POST"
 					modelAttribute="depart" acceptCharset="UTF-8">
 					<div class="col-md-3 form-group">

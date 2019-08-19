@@ -6,29 +6,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>save user</title>
+<title>Thêm chức vụ mới</title>
 </head>
 <body>
 	<div class="wrapper">
 		<c:url value="/admin/adminsaveChucvu" var="saveChucvu"></c:url>
 		<jsp:include page="../sidebar.jsp"></jsp:include>
 		<div class="main">
-			<div class="formInsertUser">
+			<div class="tableUserManagerUser">
 				<h1>Thêm mới chức vụ</h1>
 				<br /> <br />
 				<form:form action="${saveChucvu}" method="POST"
 					modelAttribute="chucvu" acceptCharset="UTF-8">
-					<div class="form-group">
+					<div class="col-md-3 form-group">
 						<label>Tên chức vụ</label>
-						<form:input class="form-control" path="tenchucvu" />
+						<form:input class="form-control" placeholder="Tên chức vụ"
+							path="tenchucvu" />
 					</div>
-					<div class="form-group">
+					<div class="col-md-3 form-group">
 						<label>Công việc</label>
-						<form:input class="form-control" path="congviec" />
+						<form:input class="form-control" placeholder="Công việc chính"
+							path="congviec" />
 					</div>
-					<button type="submit" class="btn btn-info">Thêm mới</button>
-					<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
-						lại</a>
+					<div class="col-md-3">
+						<button type="submit" class="btn btn-info">
+							<i class="fa fa-plus"></i>&nbsp; Xác nhận
+						</button>
+						<a href="#" class="btn btn-secondary" onclick="history.back();">
+							<i class="fa fa-ban"></i>&nbsp; Quay lại
+						</a>
+					</div>
 				</form:form>
 			</div>
 		</div>

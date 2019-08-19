@@ -9,29 +9,33 @@
 <title>Phân quyền</title>
 </head>
 <body>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-
-
-	<c:url value="/admin/adminupdateUserRole" var="save"></c:url>
-	<div class="formInsertUser">
-		<form:form action="${save}" method="POST" modelAttribute="userrole"
-			acceptCharset="UTF-8">
-			<form:hidden path="id"/>
-			<form:hidden path="users.id"/>
-			<!-- <div class="form-group">
-				<label>Tên nhân viên</label>
-				
-			</div> -->
-			<div class="form-group">
-				<label>Chức năng</label>
-				<form:select class="form-control" path="role.id">
-					<form:option value="0">Chọn loại quyền</form:option>
-					<form:options items="${listRole}" itemValue="id"
-						itemLabel="name" />
-				</form:select>
-			</div>			
-			<button type="submit" class="btn btn-info">Xác nhận</button>
-		</form:form>
+	<div class="wrapper">
+		<c:url value="/admin/adminupdateUserRole" var="save"></c:url>
+		<jsp:include page="../sidebar.jsp"></jsp:include>
+		<div class="main">
+			<div class="tableUserManagerUser">
+				<form:form action="${save}" method="POST" modelAttribute="userrole"
+					acceptCharset="UTF-8">
+					<form:hidden path="id" />
+					<form:hidden path="users.id" />
+					<div class="col-md-3 form-group">
+						<label>Chức năng</label>
+						<form:select class="form-control" path="role.id">
+							<form:option value="0">Chọn loại quyền</form:option>
+							<form:options items="${listRole}" itemValue="id" itemLabel="name" />
+						</form:select>
+					</div>
+					<div class="col-md-3">
+						<button type="submit" class="btn btn-info">
+							<i class="fa fa-plus"></i>&nbsp; Xác nhận
+						</button>
+						<a href="#" class="btn btn-secondary" onclick="history.back();">
+							<i class="fa fa-ban"></i>&nbsp; Quay lại
+						</a>
+					</div>
+				</form:form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

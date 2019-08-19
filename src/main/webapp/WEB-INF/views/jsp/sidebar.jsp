@@ -18,6 +18,8 @@
 <link href="<c:url value="/themes/css/style.css" />" rel="stylesheet">
 </head>
 <body>
+
+	<c:url value="../admin" var="urlAdmin" />
 	<div class="sidenav">
 		<form class="form-inline my-2 my-lg-0"
 			action="<c:url value="/j_duan_logout" />" method="post">
@@ -33,7 +35,7 @@
 				</button>
 			</div>
 		</form>
-		<a href="../admin"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Trang
+		<a href="${urlAdmin }"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Trang
 			chính</a> <a href="<c:url value="/admin/adminlistUser"/>"><i
 			class="fa fa-users" aria-hidden="true"></i>&nbsp;Quản lý thông tin
 			nhân viên</a> <a href="<c:url value="/admin/adminlistDepart"/>"><i

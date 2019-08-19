@@ -17,9 +17,7 @@
 <body>
 	<div class="content">
 		<div class="mainContent">
-			<div class="alert alert-success" role="alert">
-				<b>${message}</b>
-			</div>
+			<b>${message}</b>
 			<div class="formlogin">
 				<form name='loginForm' action="<c:url value='j_duan_login' />"
 					method='POST'>
@@ -35,6 +33,7 @@
 							type="password" class="form-control" placeholder="Mật khẩu"
 							name='password' />
 					</div>
+
 					<input type="submit" name="submit" value="Đăng nhập"
 						class="btn btn-primary btn-lg btn-block" /> <input type="hidden"
 						name="${_csrf.parameterName}" value="${_csrf.token}" />
