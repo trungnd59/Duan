@@ -14,7 +14,7 @@
 <link
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<link href="<c:url value="/themes/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/themes/css/user.css" />" rel="stylesheet">
 <meta charset="UTF-8">
 <title></title>
 </head>
@@ -35,6 +35,8 @@
 					href="${urlThongtin }">Thông tin cá nhân </a></li>
 				<li class="nav-item active"><a class="nav-link"
 					href="${urlThanhtich}">Thành tích </a></li>
+					<li class="nav-item active"><a class="nav-link"
+					href="#"> Feedback </a></li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0"
 				action="<c:url value="/j_duan_logout" />" method="post">
