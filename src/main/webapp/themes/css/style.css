@@ -94,24 +94,7 @@ Trang thêm mới user
 	margin: 2% 0% 3%;
 }
 
-/*  
-trang profile
-*/
-.card {
-	width: 50%;
-	margin: 0 auto;
-}
 
-.card-img-top {
-	width: 35%;
-	margin: 0 auto;
-}
-
-.nutchinhsuathongtin {
-	margin-left: 35%;
-}
-
-/*
 lịch sử làm việc nhân viên 
  */
 .TitleLichsulamviec {

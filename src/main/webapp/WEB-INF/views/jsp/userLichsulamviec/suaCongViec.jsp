@@ -14,35 +14,37 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
-	<div class="formInsertUser">
+	<div class="formThemmoiNV">
 		<form:form action="/Duan/user/suacongviec/${userId}"
 			modelAttribute="lichsulamviec" method="POST" acceptCharset="UTF-8">
-			<form:hidden path="id" />
-			<div class="form-group">
-				<label>Địa điểm</label>
-				<form:input class="form-control" path="diadiem" />
-			</div>
-			<div class="form-group">
-				<label>Vai trò</label>
-				<form:input class="form-control" path="vaitro" />
-			</div>
-			<div class="form-group">
-				<label>Ngày bắt đầu</label>
-				<form:input class="form-control" type="date" path="startdate" />
-			</div>
-			<div class="form-group">
-				<label>Ngày kết thúc</label>
-				<form:input class="form-control" type="date" path="finishdate" />
-			</div>
-			<div class="form-group">
-				<label>Thông tin chi tiết</label>
-				<form:input class="form-control" path="mota" />
-			</div>
-			<div class="form-group">
-				<button type="submit" id="create" class="btn btn-primary"> Chỉnh
-					sửa</button>
-				<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
-					lại</a>
+			<div class="row">
+				<form:hidden path="id" />
+				<div class="col-md-6 form-group">
+					<label>Địa điểm</label>
+					<form:input class="form-control" path="diadiem" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Vai trò</label>
+					<form:input class="form-control" path="vaitro" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Ngày bắt đầu</label>
+					<form:input class="form-control" type="date" path="startdate" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Ngày kết thúc</label>
+					<form:input class="form-control" type="date" path="finishdate" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Thông tin chi tiết</label>
+					<form:textarea rows="10" cols="50" class="form-control" path="mota" />
+				</div>
+				<div class="col-md-12 form-group">
+					<button type="submit" id="create" class="btn btn-primary">
+						Chỉnh sửa</button>
+					<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
+						lại</a>
+				</div>
 			</div>
 		</form:form>
 	</div>

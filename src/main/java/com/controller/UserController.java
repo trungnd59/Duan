@@ -5,6 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -67,15 +68,27 @@ public class UserController {
 	}
 
 	@RequestMapping("/adminsaveUser")
-	public String dosaveUser(@ModelAttribute("user") Users user, ModelMap model,
-			@ModelAttribute("userrole") UsersRoles usersRoles) {
-		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(10)));
-		userService.saveUser(user);
-		model.addAttribute("listUser", userService.findAllUser());
-		usersRoles.setUsers(user);
-		userroleService.saveUsersRoles(usersRoles);
-
+	public String dosaveUser(@ModelAttribute("user") Users user, ModelMap model, BindingResult bindingResult) {
+		Users user2 = userService.getUserByUsername(user.getUsername());
+		if (user2 != null) {
+			bindingResult.rejectValue("username", "user", "Tên tài khoản này đã tồn tại! Vui lòng nhập lại");
+		}
+		if(bindingResult.hasErrors()){
+			model.addAttribute("message", "Vui lòng sửa các lỗi sau đây !");
+			model.addAttribute("listDepart", departService.findAllDeparts());
+			model.addAttribute("chucvuList", chucvuService.findAllChucvu());
+			return "adminUser/user-save";
+		}
+		else {
+			user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(10)));
+			userService.saveUser(user);
+			model.addAttribute("listUser", userService.findAllUser());
+			UsersRoles userRole= new UsersRoles();
+			userRole.setUsers(user);
+			userroleService.saveUsersRoles(userRole);
+		}
 		return "redirect:/admin/adminlistUser";
+
 	}
 
 	@RequestMapping("/adminuser-update/{id}")

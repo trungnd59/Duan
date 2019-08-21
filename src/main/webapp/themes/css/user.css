@@ -1,0 +1,38 @@
+/*  
+trang profile
+*/
+.card {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.card-img-top {
+	width: 35%;
+	margin: 0 auto;
+}
+
+.nutchinhsuathongtin {
+	margin-left: 35%;
+}
+
+.tableUserManager {
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 3%;
+}
+
+.
+.button-intop {
+	margin: 2% 0% 3%;
+}
+
+.formThemmoiNV {
+	width: 62%;
+	margin: 0 auto;
+	margin-top: 3%;
+}
+
+.button-intop {
+	margin-bottom: 2%;
+}
+
