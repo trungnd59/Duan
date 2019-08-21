@@ -13,7 +13,7 @@
 	<div class="formThemmoiNV">
 		<h1>Sửa thông tin tài khoản</h1>
 		<br /> <br />
-		<form:form action="/Duan/user/suaProfile/${userId}" method="POST"
+		<form:form id="FormupdateThongtin" action="/Duan/user/suaProfile/${userId}" method="POST"
 			modelAttribute="user" acceptCharset="UTF-8">
 			<div class="row">
 				<form:hidden path="id" />
@@ -30,26 +30,26 @@
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Full name</label>
-					<form:input class="form-control" path="fullname" />
+					<form:input class="form-control" path="fullname" name="fullname"/>
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Ngày sinh</label>
-					<form:input type="date" class="form-control" path="ngaysinh" />
+					<form:input type="date" class="form-control" path="ngaysinh" name="ngaysinh" id="ngaysinh"/>
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Address</label>
-					<form:input class="form-control" path="address" />
+					<form:input class="form-control" path="address" name="address"/>
 				</div>
 				<div class="col-md-6 form-group selectFormAddUser">
 					<label>Gender</label>
-					<form:select class="form-control" path="gender">
+					<form:select class="form-control" path="gender" >
 						<form:option value="1">Male</form:option>
 						<form:option value="0">Female</form:option>
 					</form:select>
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Email</label>
-					<form:input class="form-control" path="email" />
+					<form:input class="form-control" path="email" name="email"/>
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Phone</label>

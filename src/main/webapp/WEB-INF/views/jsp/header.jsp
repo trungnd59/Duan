@@ -17,6 +17,8 @@
 <link href="<c:url value="/themes/css/user.css" />" rel="stylesheet">
 <meta charset="UTF-8">
 <title></title>
+<script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
+<script src="<c:url value="/themes/js/validateUser.js" />"></script>
 </head>
 <body>
 	<c:url value="/user" var="urlUser" />
