@@ -15,6 +15,7 @@
 			<c:url value="/admin/adminsaveUser" var="saveUser"></c:url>
 			<div class="formThemmoiNV">
 				<h1>Thêm mới thông tin nhân viên</h1>
+				${message }
 				<form:form action="${saveUser}" method="POST" modelAttribute="user"
 					acceptCharset="UTF-8">
 					<div class="row">
@@ -22,6 +23,7 @@
 							<label>Tên tài khoản</label>
 							<form:input class="form-control" placeholder="Tên tài khoản"
 								path="username" />
+								<form:form path="username"/> <form:errors path="username"/>
 						</div>
 						<div class=" col-md-6 form-group">
 							<label>Mật khẩu</label>
