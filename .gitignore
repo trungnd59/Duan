@@ -1,1 +1,18 @@
-/target/
+# Created by https://www.gitignore.io/api/maven
+# Edit at https://www.gitignore.io/?templates=maven
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+MANIFEST.MF
+release.properties
+src/main/webapp/WEB-INF/spring-mvc-servlet.xml
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+# End of https://www.gitignore.io/api/maven

@@ -14,6 +14,10 @@
 <link href="<c:url value="/themes/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/themes/js/jquery.min.js" />"></script>
 <script src="<c:url value="/themes/js/bootstrap.min.js" />"></script>
+
+<script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
+<script src="<c:url value="/themes/js/validateLogin.js" />"></script>
+
 <meta charset="UTF-8">
 <title>login</title>
 </head>
@@ -24,7 +28,7 @@
 			<div class="formlogin">
 				<h1 class="tieudedangnhap">Đăng nhập hệ thống</h1>
 				<form name='loginForm' action="<c:url value='j_duan_login' />"
-					method='POST'>
+					method='POST' id="validateLogin">
 					<div class="form-group">
 						<div class="input-group-prepend">
 							<span class="icon" id="basic-addon1"><i class="fa fa-user"
