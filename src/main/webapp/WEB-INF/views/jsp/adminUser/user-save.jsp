@@ -3,19 +3,25 @@
 <!DOCTYPE html>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Thêm mới thông tin nhân viên</title>
+<script type="text/javascript"
+	src="<c:url value="/themes/js/Uservalidation.js"/>"></script>
+<script type="text/javascript"
+	src="<c:url value="/themes/js/jquery.validate.min.js"/>"></script>
 </head>
+
 <body>
+
 	<div class="wrapper">
 		<jsp:include page="../sidebar.jsp"></jsp:include>
 		<div class="main">
 			<c:url value="/admin/adminsaveUser" var="saveUser"></c:url>
 			<div class="formThemmoiNV">
 				<h1>Thêm mới thông tin nhân viên</h1>
-				${message }
 				<form:form action="${saveUser}" method="POST" modelAttribute="user"
 					acceptCharset="UTF-8">
 					<div class="row">
@@ -23,7 +29,7 @@
 							<label>Tên tài khoản</label>
 							<form:input class="form-control" placeholder="Tên tài khoản"
 								path="username" />
-								<form:form path="username"/> <form:errors path="username"/>
+							<form:errors path="username"></form:errors>
 						</div>
 						<div class=" col-md-6 form-group">
 							<label>Mật khẩu</label>

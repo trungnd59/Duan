@@ -71,8 +71,7 @@ public class UserController {
 	public String dosaveUser(@ModelAttribute("user") Users user, ModelMap model, BindingResult bindingResult) {
 		Users user2 = userService.getUserByUsername(user.getUsername());
 		if (user2 != null) {
-			bindingResult.rejectValue("username", "user", "There is already a person registered with the nic provided");
-
+			bindingResult.rejectValue("username", "user", "Tên tài khoản này đã tồn tại! Vui lòng nhập lại");
 		}
 		if(bindingResult.hasErrors()){
 			model.addAttribute("message", "Vui lòng sửa các lỗi sau đây !");
