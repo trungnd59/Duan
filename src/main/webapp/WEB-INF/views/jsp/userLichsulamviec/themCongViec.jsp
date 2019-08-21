@@ -14,36 +14,37 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
-	<div class="formInsertUser">
+	<div class="formThemmoiNV">
 		<form:form id="form_id" action="/Duan/user/themcongviec/${userId}"
 			method="POST" modelAttribute="lichsulamviec" acceptCharset="UTF-8">
-			<div class="form-group">
-				<label>Địa điểm</label>
-				<form:input class="form-control" path="diadiem" />
+			<div class="row">
+				<div class="col-md-6 form-group">
+					<label>Địa điểm</label>
+					<form:input class="form-control" path="diadiem" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Vai trò</label>
+					<form:input class="form-control" path="vaitro" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Ngày bắt đầu</label>
+					<form:input class="form-control" type="date" path="startdate" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Ngày kết thúc</label>
+					<form:input class="form-control" type="date" path="finishdate" />
+				</div>
+				<div class="col-md-6 form-group">
+					<label>Thông tin chi tiết</label>
+					<form:textarea rows="10" cols="50" class="form-control" path="mota" />
+				</div>
+				<div class="col-md-12 form-group">
+					<button type="submit" id="create" class="btn btn-primary">Thêm
+						mới</button>
+					<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
+						lại</a>
+				</div>
 			</div>
-			<div class="form-group">
-				<label>Vai trò</label>
-				<form:input class="form-control" path="vaitro" />
-			</div>
-			<div class="form-group">
-				<label>Ngày bắt đầu</label>
-				<form:input class="form-control" type="date" path="startdate" />
-			</div>
-			<div class="form-group">
-				<label>Ngày kết thúc</label>
-				<form:input class="form-control" type="date" path="finishdate" />
-			</div>
-			<div class="form-group">
-				<label>Thông tin chi tiết</label>
-				<form:input class="form-control" path="mota" />
-			</div>
-			<div class="form-group">
-				<button type="submit" id="create" class="btn btn-primary">Thêm
-					mới</button>
-				<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
-					lại</a>
-			</div>
-
 		</form:form>
 	</div>
 </body>
