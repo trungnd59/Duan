@@ -9,9 +9,6 @@
 <title>Phân quyền</title>
 </head>
 <body>
-	<jsp:include page="../headerAdmin.jsp"></jsp:include>
-
-
 	<c:url value="/admin/adminSaveUserRole" var="save"></c:url>
 	<div class="formInsertUser">
 		<form:form action="${save}" method="POST" modelAttribute="userrole"
