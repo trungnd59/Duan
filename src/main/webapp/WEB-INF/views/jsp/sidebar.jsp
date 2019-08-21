@@ -16,6 +16,9 @@
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
 <link href="<c:url value="/themes/css/style.css" />" rel="stylesheet">
+
+<script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
+<script src="<c:url value="/themes/js/validateAdmin.js" />"></script>
 </head>
 <body>
 

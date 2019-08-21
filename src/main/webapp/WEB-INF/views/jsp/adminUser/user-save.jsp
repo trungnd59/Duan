@@ -8,37 +8,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Thêm mới thông tin nhân viên</title>
-<script type="text/javascript"
-	src="<c:url value="/themes/js/Uservalidation.js"/>"></script>
-<script type="text/javascript"
-	src="<c:url value="/themes/js/jquery.validate.min.js"/>"></script>
 </head>
 
 <body>
-
 	<div class="wrapper">
 		<jsp:include page="../sidebar.jsp"></jsp:include>
 		<div class="main">
 			<c:url value="/admin/adminsaveUser" var="saveUser"></c:url>
 			<div class="formThemmoiNV">
 				<h1>Thêm mới thông tin nhân viên</h1>
-				<form:form action="${saveUser}" method="POST" modelAttribute="user"
-					acceptCharset="UTF-8">
+				<form:form id="validateAddUser" action="${saveUser}" method="POST"
+					modelAttribute="user" acceptCharset="UTF-8">
 					<div class="row">
 						<div class="col-md-6 form-group">
 							<label>Tên tài khoản</label>
 							<form:input class="form-control" placeholder="Tên tài khoản"
-								path="username" />
+								path="username" name="username" />
 							<form:errors path="username"></form:errors>
 						</div>
 						<div class=" col-md-6 form-group">
 							<label>Mật khẩu</label>
 							<form:input class="form-control" type="password"
-								placeholder="Mật khẩu" path="password" />
+								placeholder="Mật khẩu" path="password" name="password" />
 						</div>
 						<div class="col-md-6 form-group selectFormAddUser">
 							<label>Trạng thái</label>
-							<form:select class="form-control" path="enabled">
+							<form:select class="form-control" path="enabled" name="enabled">
 								<form:option value="1">Kích hoạt</form:option>
 								<form:option value="0">Không kích hoạt</form:option>
 							</form:select>
@@ -46,7 +41,7 @@
 						<div class="col-md-6 form-group">
 							<label>Tên đầy đủ</label>
 							<form:input class="form-control" placeholder="Họ và tên"
-								path="fullname" />
+								path="fullname" name="fullname" />
 						</div>
 						<div class="col-md-6 form-group">
 							<label>Ngày sinh</label>
@@ -81,14 +76,12 @@
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<form:select class="form-control" path="depart.id">
-								<form:option value="0">Chọn phòng ban</form:option>
 								<form:options items="${listDepart}" itemValue="id"
 									itemLabel="tenphongban" />
 							</form:select>
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<form:select class="form-control" path="chucvu.id">
-								<form:option value="0">Chọn Chức vụ</form:option>
 								<form:options items="${chucvuList}" itemValue="id"
 									itemLabel="tenchucvu" />
 							</form:select>
