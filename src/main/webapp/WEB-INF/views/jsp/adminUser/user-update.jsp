@@ -15,14 +15,14 @@
 			<c:url value="/admin/adminupdateUser" var="updateUser" />
 			<div class="formThemmoiNV">
 				<h1>Sửa thông tin tài khoản</h1>
-				<form:form action="${updateUser}" method="POST"
+				<form:form id="validateAddUser" action="${updateUser}" method="POST"
 					modelAttribute="user" acceptCharset="UTF-8">
 					<div class="row">
 						<form:hidden path="id" />
 						<div class="col-md-6 form-group">
 							<label>Tên tài khoản</label>
 							<form:input class="form-control" placeholder="Tên tài khoản"
-								path="username" />
+								path="username" name="username"/>
 						</div>
 						<form:hidden path="password" readonly="true" />
 						<div class="col-md-6 form-group selectFormAddUser">
@@ -35,7 +35,7 @@
 						<div class="col-md-6 form-group">
 							<label>Tên đầy đủ</label>
 							<form:input class="form-control" placeholder="Họ và tên"
-								path="fullname" />
+								path="fullname" name="fullname"/>
 						</div>
 						<div class="col-md-6 form-group">
 							<label>Ngày sinh</label>

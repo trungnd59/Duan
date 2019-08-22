@@ -50,12 +50,12 @@
 						<div class="col-md-6 form-group">
 							<label>Địa chỉ</label>
 							<form:input class="form-control" placeholder="Địa chỉ"
-								path="address" />
+								path="address" name="address" />
 						</div>
 						<div class="col-md-6 form-group">
 							<label>Mức lương</label>
 							<form:input type="number" pattern="[0-9]*"
-								placeholder="Tiền lương" class="form-control" path="salary" />
+								placeholder="Tiền lương" class="form-control" path="salary" name="salary"/>
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<label>Giới tính</label>
@@ -67,12 +67,12 @@
 						<div class="col-md-6 form-group">
 							<label>Email</label>
 							<form:input class="form-control" placeholder="Địa chỉ email"
-								path="email" />
+								path="email" name="email"/>
 						</div>
 						<div class="col-md-6 form-group">
 							<label>Số điện thoại</label>
 							<form:input type="number" pattern="[0-9]*"
-								placeholder="Số điện thoại" class="form-control" path="phone" />
+								placeholder="Số điện thoại" class="form-control" path="phone" name="phone"/>
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<form:select class="form-control" path="depart.id">
