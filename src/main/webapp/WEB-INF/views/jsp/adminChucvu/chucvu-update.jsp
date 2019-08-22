@@ -16,8 +16,8 @@
 				<h1>Sửa thông tin chức vụ</h1>
 				<br /> <br />
 				<c:url value="/admin/adminupdateChucvu" var="updateChucvu" />
-				<form:form action="${updateChucvu}" method="POST"
-					modelAttribute="chucvu" acceptCharset="UTF-8">
+				<form:form id="validatechucvu" action="${updateChucvu}"
+					method="POST" modelAttribute="chucvu" acceptCharset="UTF-8">
 					<form:hidden path="id" readonly="true" />
 					<div class="col-md-3 form-group">
 						<label>Tên chức vụ</label>
@@ -41,6 +41,6 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="<c:url value="/themes/js/validateChucvu.js" />"></script>
 </body>
 </html>

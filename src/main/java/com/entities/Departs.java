@@ -15,9 +15,9 @@ import javax.persistence.Table;
 @Entity
 public class Departs {
 	@Id
-	@Column(name = "id")
+	@Column(name = "id", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	@Column(name = "tenphongban")
 	private String tenphongban;
 	@Column(name = "chucnang")
@@ -29,7 +29,7 @@ public class Departs {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Departs(int id, String tenphongban, String chucnang, Collection<Users> users) {
+	public Departs(Integer id, String tenphongban, String chucnang, Collection<Users> users) {
 		super();
 		this.id = id;
 		this.tenphongban = tenphongban;
@@ -37,11 +37,11 @@ public class Departs {
 		this.users = users;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

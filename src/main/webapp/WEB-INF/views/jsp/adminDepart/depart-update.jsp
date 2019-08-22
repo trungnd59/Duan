@@ -16,8 +16,8 @@
 				<h1>Sửa thông phòng ban</h1>
 				<br /> <br />
 				<c:url value="/admin/adminupdateDepart" var="updateDepart" />
-				<form:form action="${updateDepart}" method="POST"
-					modelAttribute="depart" acceptCharset="UTF-8">
+				<form:form id="validatephongban" action="${updateDepart}"
+					method="POST" modelAttribute="depart" acceptCharset="UTF-8">
 					<form:hidden path="id" readonly="true" />
 					<div class="col-md-3 form-group">
 						<label>Tên phòng ban</label>
@@ -41,7 +41,6 @@
 			</div>
 		</div>
 	</div>
-
-
+	<script src="<c:url value="/themes/js/validatePhongban.js" />"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
 						<div class="col-md-6 form-group">
 							<label>Tên tài khoản</label>
 							<form:input class="form-control" placeholder="Tên tài khoản"
-								path="username" name="username"/>
+								path="username" name="username" readonly="true" />
 						</div>
 						<form:hidden path="password" readonly="true" />
 						<div class="col-md-6 form-group selectFormAddUser">
@@ -35,7 +35,7 @@
 						<div class="col-md-6 form-group">
 							<label>Tên đầy đủ</label>
 							<form:input class="form-control" placeholder="Họ và tên"
-								path="fullname" name="fullname"/>
+								path="fullname" name="fullname" />
 						</div>
 						<div class="col-md-6 form-group">
 							<label>Ngày sinh</label>
@@ -71,16 +71,14 @@
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<label>Phòng ban</label>
-							<form:select class="form-control" path="depart.id">
-								<form:option value="0">Chọn phòng ban</form:option>
+							<form:select class="form-control" path="depart.id">							
 								<form:options items="${listDepart}" itemValue="id"
 									itemLabel="tenphongban" />
 							</form:select>
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<label>Chức vụ</label>
-							<form:select class="form-control" path="chucvu.id">
-								<form:option value="0">Chọn Chức vụ</form:option>
+							<form:select class="form-control" path="chucvu.id">						
 								<form:options items="${chucvuList}" itemValue="id"
 									itemLabel="tenchucvu" />
 							</form:select>
@@ -97,7 +95,7 @@
 				</form:form>
 			</div>
 		</div>
-
 	</div>
+	<script src="<c:url value="/themes/js/validateAdmin.js" />"></script>
 </body>
 </html>

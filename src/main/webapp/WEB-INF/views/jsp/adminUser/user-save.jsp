@@ -21,9 +21,9 @@
 					modelAttribute="user" acceptCharset="UTF-8">
 					<div class="row">
 						<div class="col-md-6 form-group">
-							<label>Tên tài khoản</label>
+							<label for="username">Tên tài khoản</label>
 							<form:input class="form-control" placeholder="Tên tài khoản"
-								path="username" name="username" />
+								path="username" name="username" id="username" />
 							<form:errors path="username"></form:errors>
 						</div>
 						<div class=" col-md-6 form-group">
@@ -55,11 +55,13 @@
 						<div class="col-md-6 form-group">
 							<label>Mức lương</label>
 							<form:input type="number" pattern="[0-9]*"
-								placeholder="Tiền lương" class="form-control" path="salary" name="salary"/>
+								placeholder="Tiền lương" class="form-control" path="salary"
+								name="salary" />
 						</div>
-						<div class="col-md-3 form-group selectFormAddUser">
+						<div class="col-md-4 form-group selectFormAddUser">
 							<label>Giới tính</label>
 							<form:select class="form-control" path="gender">
+								<form:option value="">-- Chọn giới tính --</form:option>
 								<form:option value="1">Nam</form:option>
 								<form:option value="0">Nữ</form:option>
 							</form:select>
@@ -67,21 +69,24 @@
 						<div class="col-md-6 form-group">
 							<label>Email</label>
 							<form:input class="form-control" placeholder="Địa chỉ email"
-								path="email" name="email"/>
+								path="email" name="email" />
 						</div>
 						<div class="col-md-6 form-group">
 							<label>Số điện thoại</label>
 							<form:input type="number" pattern="[0-9]*"
-								placeholder="Số điện thoại" class="form-control" path="phone" name="phone"/>
+								placeholder="Số điện thoại" class="form-control" path="phone"
+								name="phone" />
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<form:select class="form-control" path="depart.id">
+								<form:option value="">Chọn phòng ban</form:option>
 								<form:options items="${listDepart}" itemValue="id"
 									itemLabel="tenphongban" />
 							</form:select>
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<form:select class="form-control" path="chucvu.id">
+								<form:option value="">Chọn chức vụ</form:option>
 								<form:options items="${chucvuList}" itemValue="id"
 									itemLabel="tenchucvu" />
 							</form:select>
@@ -99,5 +104,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value="/themes/js/validateAdmin.js" />"></script>
 </body>
 </html>

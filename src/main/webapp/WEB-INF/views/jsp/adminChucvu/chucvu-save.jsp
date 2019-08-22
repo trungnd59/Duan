@@ -16,7 +16,7 @@
 			<div class="tableUserManagerUser">
 				<h1>Thêm mới chức vụ</h1>
 				<br /> <br />
-				<form:form action="${saveChucvu}" method="POST"
+				<form:form id="validatechucvu" action="${saveChucvu}" method="POST"
 					modelAttribute="chucvu" acceptCharset="UTF-8">
 					<div class="col-md-3 form-group">
 						<label>Tên chức vụ</label>
@@ -40,5 +40,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value="/themes/js/validateChucvu.js" />"></script>
 </body>
 </html>

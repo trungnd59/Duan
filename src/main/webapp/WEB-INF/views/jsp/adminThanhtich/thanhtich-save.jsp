@@ -16,12 +16,12 @@
 			<div class="tableUserManagerUser">
 				<h1>Thêm thành tích hoặc kỷ luật cho nhân viên</h1>
 				<br /> <br />
-				<form:form action="${saveThanhtich}" method="POST"
-					modelAttribute="thanhtich" acceptCharset="UTF-8">
+				<form:form id="validatethanhtich" action="${saveThanhtich}"
+					method="POST" modelAttribute="thanhtich" acceptCharset="UTF-8">
 					<div class="form-group selectFormAddUser col-md-3">
 						<label>Chọn nhân viên</label>
 						<form:select class="form-control" path="users.id">
-							<form:option value="0">Chọn nhân viên</form:option>
+							<form:option value="">-- Chọn nhân viên -- </form:option>
 							<form:options items="${listNhanvien}" itemValue="id"
 								itemLabel="fullname" />
 						</form:select>
@@ -29,7 +29,8 @@
 					<div class="col-md-3 form-group">
 						<label>Loại: &nbsp;</label>
 						<form:radiobutton path="loaithanhtich" value="0"
-							label=" Thành tích" />&nbsp;&nbsp;
+							label=" Thành tích" />
+						&nbsp;&nbsp;
 						<form:radiobutton path="loaithanhtich" value="1" label=" Kỷ luật" />
 					</div>
 					<div class="col-md-3 form-group">
@@ -49,5 +50,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value="/themes/js/validateThanhtich.js" />"></script>
 </body>
 </html>

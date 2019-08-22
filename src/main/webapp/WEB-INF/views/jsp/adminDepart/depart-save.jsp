@@ -15,27 +15,30 @@
 			<c:url value="/admin/adminsaveDepart" var="saveDepart"></c:url>
 			<div class="tableUserManagerUser">
 				<h1>Thêm mới phòng ban</h1>
-				<form:form action="${saveDepart}" method="POST"
-					modelAttribute="depart" acceptCharset="UTF-8">
+				<form:form id="validatephongban" action="${saveDepart}"
+					method="POST" modelAttribute="depart" acceptCharset="UTF-8">
 					<div class="col-md-3 form-group">
 						<label>Tên phòng ban</label>
-						<form:input class="form-control" placeholder="Tên phòng ban" path="tenphongban" />
+						<form:input class="form-control" placeholder="Tên phòng ban"
+							path="tenphongban" name="tenphongban" />
 					</div>
 					<div class="col-md-3 form-group">
 						<label>Chức năng</label>
-						<form:input class="form-control" placeholder="Chức năng chính" path="chucnang" />
+						<form:input class="form-control" placeholder="Chức năng chính"
+							path="chucnang" name="chucnang" />
 					</div>
 					<div class="col-md-3">
 						<button type="submit" class="btn btn-info">
-								<i class="fa fa-plus"></i>&nbsp; Xác nhận
-							</button>
-							<a href="#" class="btn btn-secondary" onclick="history.back();">
-								<i class="fa fa-ban"></i>&nbsp; Quay lại
-							</a>
+							<i class="fa fa-plus"></i>&nbsp; Xác nhận
+						</button>
+						<a href="#" class="btn btn-secondary" onclick="history.back();">
+							<i class="fa fa-ban"></i>&nbsp; Quay lại
+						</a>
 					</div>
 				</form:form>
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value="/themes/js/validatePhongban.js" />"></script>
 </body>
 </html>

@@ -14,14 +14,14 @@
 		<jsp:include page="../sidebar.jsp"></jsp:include>
 		<div class="main">
 			<div class="tableUserManagerUser">
-				<form:form action="${save}" method="POST" modelAttribute="userrole"
+				<form:form id="validatephanquyen" action="${save}" method="POST" modelAttribute="userrole"
 					acceptCharset="UTF-8">
 					<form:hidden path="id" />
 					<form:hidden path="users.id" />
 					<div class="col-md-3 form-group">
 						<label>Chức năng</label>
 						<form:select class="form-control" path="role.id">
-							<form:option value="0">Chọn loại quyền</form:option>
+							<form:option value="">-- Chọn loại quyền --</form:option>
 							<form:options items="${listRole}" itemValue="id" itemLabel="name" />
 						</form:select>
 					</div>
@@ -37,5 +37,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value="/themes/js/validateSuaphanquyen.js" />"></script>
 </body>
 </html>

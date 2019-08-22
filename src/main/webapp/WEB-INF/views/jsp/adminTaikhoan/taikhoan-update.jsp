@@ -20,11 +20,11 @@
 					<form:hidden path="id" />
 					<div class="col-md-3 form-group">
 						<label>Username</label>
-						<form:input class="form-control" path="username" />
+						<form:input class="form-control" path="username" disabled="true"/>
 					</div>
 					<div class="col-md-3 form-group">
 						<label>Full name</label>
-						<form:input class="form-control" path="fullname" />
+						<form:input class="form-control" path="fullname" disabled="true"/>
 					</div>
 					<div class="col-md-3 form-group selectFormAddUser">
 						<label>Kích hoạt</label>

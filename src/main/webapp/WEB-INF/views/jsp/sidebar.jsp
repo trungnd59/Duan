@@ -10,6 +10,7 @@
 <script src="<c:url value="/themes/js/datatables.min.js" />"></script>
 <link href="<c:url value="/themes/css/datatables.min.css" />"
 	rel="stylesheet">
+<%-- <link href="<c:url value="/themes/css/validate.css" />" rel="stylesheet"> --%>
 <link href="<c:url value="/themes/css/bootstrap.min.css" />"
 	rel="stylesheet">
 <link
@@ -18,7 +19,7 @@
 <link href="<c:url value="/themes/css/style.css" />" rel="stylesheet">
 
 <script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
-<script src="<c:url value="/themes/js/validateAdmin.js" />"></script>
+<script src="<c:url value="/themes/js/additionals.js" />"></script>
 </head>
 <body>
 
