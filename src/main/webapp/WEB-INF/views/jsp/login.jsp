@@ -16,7 +16,8 @@
 <script src="<c:url value="/themes/js/bootstrap.min.js" />"></script>
 
 <script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
-<script src="<c:url value="/themes/js/validateLogin.js" />"></script>
+
+<script src="<c:url value="/themes/js/additionals.js" />"></script>
 
 <meta charset="UTF-8">
 <title>login</title>
@@ -30,22 +31,19 @@
 				<form name='loginForm' action="<c:url value='j_duan_login' />"
 					method='POST' id="validateLogin">
 					<div class="form-group">
-						<div class="input-group-prepend">
+				<!-- 		<div class="input-group-prepend">
 							<span class="icon" id="basic-addon1"><i class="fa fa-user"
 								aria-hidden="true"></i></span>
-						</div>
+						</div> -->
 						<input type="text" class="form-control onhap"
 							placeholder="Nhập tên tài khoản" name="username"
 							aria-describedby="basic-addon1">
-						<p style="color: red; float: left;">*</p>
-						<small class="form-text text-muted">Lưu ý tài khoản phải
-							được kích hoạt mới có thể đăng nhập được hệ thống!</small>
 					</div>
 					<div class="form-group">
-						<div class="input-group-prepend">
+					<!-- 	<div class="input-group-prepend">
 							<span class="icon" id="basic-addon1"><i
 								class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-						</div>
+						</div> -->
 						<input type="password" class="form-control onhap"
 							placeholder="Mật khẩu" name='password' />
 					</div>
@@ -61,5 +59,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value="/themes/js/validateUser.js" />"></script>
 </body>
 </html>

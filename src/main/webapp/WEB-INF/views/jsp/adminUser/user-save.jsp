@@ -24,7 +24,7 @@
 							<label for="username">Tên tài khoản</label>
 							<form:input class="form-control" placeholder="Tên tài khoản"
 								path="username" name="username" id="username" />
-							<form:errors path="username"></form:errors>
+							<form:errors path="username" class="is-invalid-user"></form:errors>
 						</div>
 						<div class=" col-md-6 form-group">
 							<label>Mật khẩu</label>

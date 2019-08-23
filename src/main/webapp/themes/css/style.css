@@ -40,9 +40,7 @@ Trang login
 	border: unset;
 }
 
-.formlogin span {
-	position: absolute;
-}
+
 
 .onhap {
 	border: unset;
@@ -56,11 +54,6 @@ Trang login
 	padding: 0 12% 0 18%;
 }
 
-.formlogin span {
-	position: absolute;
-	margin: 0% 1% 1% 1%;
-	font-size: 30px;
-}
 
 .infoMenu {
 	margin-right: 11px;
@@ -79,7 +72,9 @@ Trang thêm mới user
 	margin: 0 auto;
 	margin-top: 3%;
 }
-
+.is-invalid-user{
+	color: red; 
+}
 .selectFormAddUser {
 	width: 30%;
 }
