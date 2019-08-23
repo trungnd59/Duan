@@ -15,7 +15,7 @@
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div class="formThemmoiNV">
-		<form:form action="/Duan/user/suacongviec/${userId}"
+		<form:form id="formthemmoiLS" action="/Duan/user/suacongviec/${userId}"
 			modelAttribute="lichsulamviec" method="POST" acceptCharset="UTF-8">
 			<div class="row">
 				<form:hidden path="id" />
@@ -29,7 +29,8 @@
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Ngày bắt đầu</label>
-					<form:input class="form-control" type="date" path="startdate" />
+					<form:input class="form-control" type="date" path="startdate"
+						id="startdate" />
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Ngày kết thúc</label>
@@ -41,14 +42,13 @@
 				</div>
 				<div class="col-md-12 form-group">
 					<button type="submit" id="create" class="btn btn-primary">
-						Chỉnh sửa</button>
-					<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
-						lại</a>
+						<i class="fa fa-pencil"></i>&nbsp;Chỉnh sửa</button>
+					<a href="#" class="btn btn-secondary" onclick="history.back();"><i
+						class="fa fa-ban"></i>&nbsp;Quay lại</a>
 				</div>
 			</div>
 		</form:form>
 	</div>
+	<script src="<c:url value="/themes/js/validateLslv.js" />"></script>
 </body>
-
-
 </html>

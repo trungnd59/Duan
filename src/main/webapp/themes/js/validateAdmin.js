@@ -35,6 +35,8 @@ $("#validateAddUser")
 						},
 						"ngaysinh" : {
 							required : true,
+							date : true,
+							maxDate : true
 						},
 						"address" : {
 							required : true,
@@ -116,3 +118,11 @@ $.validator.addMethod("regexPhone", function(value, element, regexpr) {
 $.validator.addMethod("regaxUsername", function(value, element, regexpr) {
 	return regexpr.test(value);
 }, "Tên tài khoản không hợp lệ, vui lòng thử lại!");
+
+$.validator.addMethod("maxDate", function(value, element) {
+	var curDate = new Date("2000-01-01");
+    var inputDate = new Date(value);
+    if (inputDate < curDate)
+		return true;
+	return false;
+}, "Ngày sinh không hợp lệ!");

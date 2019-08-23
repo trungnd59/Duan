@@ -12,9 +12,6 @@ jQuery.validator.setDefaults({
 	}
 });
 $("#validatephanquyen").validate({
-	onfocusout : false,
-	onkeyup : false,
-	onclick : false,
 	rules : {
 		"role.id" : {
 			required : true,

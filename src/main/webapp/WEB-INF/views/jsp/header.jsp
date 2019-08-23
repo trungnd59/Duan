@@ -16,9 +16,7 @@
 	rel="stylesheet">
 <link href="<c:url value="/themes/css/user.css" />" rel="stylesheet">
 <meta charset="UTF-8">
-<title></title>
 <script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
-<script src="<c:url value="/themes/js/validateUser.js" />"></script>
 </head>
 <body>
 	<c:url value="/user" var="urlUser" />
@@ -37,8 +35,8 @@
 					href="${urlThongtin }">Thông tin cá nhân </a></li>
 				<li class="nav-item active"><a class="nav-link"
 					href="${urlThanhtich}">Thành tích </a></li>
-					<li class="nav-item active"><a class="nav-link"
-					href="#"> Feedback </a></li>
+				<li class="nav-item active"><a class="nav-link" href="#">
+						Feedback </a></li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0"
 				action="<c:url value="/j_duan_logout" />" method="post">

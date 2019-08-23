@@ -13,7 +13,8 @@
 	<div class="formThemmoiNV">
 		<h1>Sửa thông tin tài khoản</h1>
 		<br /> <br />
-		<form:form id="FormupdateThongtin" action="/Duan/user/suaProfile/${userId}" method="POST"
+		<form:form id="FormupdateThongtin"
+			action="/Duan/user/suaProfile/${userId}" method="POST"
 			modelAttribute="user" acceptCharset="UTF-8">
 			<div class="row">
 				<form:hidden path="id" />
@@ -26,30 +27,32 @@
 				<form:hidden path="salary" />
 				<div class="col-md-6 form-group">
 					<label>Username</label>
-					<form:input class="form-control" path="username" readonly="true"/>
+					<form:input class="form-control" path="username" readonly="true" />
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Full name</label>
-					<form:input class="form-control" path="fullname" name="fullname"/>
+					<form:input class="form-control" path="fullname" name="fullname" />
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Ngày sinh</label>
-					<form:input type="date" class="form-control" path="ngaysinh" name="ngaysinh" id="ngaysinh"/>
+					<form:input type="date" class="form-control" path="ngaysinh"
+						name="ngaysinh" id="ngaysinh" />
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Address</label>
-					<form:input class="form-control" path="address" name="address"/>
+					<form:input class="form-control" path="address" name="address" />
 				</div>
 				<div class="col-md-6 form-group selectFormAddUser">
 					<label>Gender</label>
-					<form:select class="form-control" path="gender" >
+					<form:select class="form-control" path="gender">
+						<form:option value="">Chọn giới tính</form:option>
 						<form:option value="1">Male</form:option>
 						<form:option value="0">Female</form:option>
 					</form:select>
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Email</label>
-					<form:input class="form-control" path="email" name="email"/>
+					<form:input class="form-control" path="email" name="email" />
 				</div>
 				<div class="col-md-6 form-group">
 					<label>Phone</label>
@@ -57,12 +60,15 @@
 						path="phone" />
 				</div>
 				<div class="col-md-12 form-group">
-					<button type="submit" class="btn btn-info">Cập nhật</button>
-					<a href="#" class="btn btn-secondary" onclick="history.back();">Quay
-						lại</a>
+					<button type="submit" class="btn btn-info">
+						<i class="fa fa-pencil"></i>&nbsp;Cập nhật
+					</button>
+					<a href="#" class="btn btn-secondary" onclick="history.back();"><i
+						class="fa fa-ban"></i>&nbsp;Quay lại</a>
 				</div>
 			</div>
 		</form:form>
 	</div>
+	<script src="<c:url value="/themes/js/validateUser.js" />"></script>
 </body>
 </html>

@@ -12,9 +12,6 @@ jQuery.validator.setDefaults({
 	}
 });
 $("#validatephongban").validate({
-	onfocusout : false,
-	onkeyup : false,
-	onclick : false,
 	rules : {
 		"tenphongban" : {
 			required : true,

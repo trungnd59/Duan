@@ -12,9 +12,6 @@ jQuery.validator.setDefaults({
 	}
 });
 $("#validatethanhtich").validate({
-	onfocusout : false,
-	onkeyup : false,
-	onclick : false,
 	rules : {
 		"lydo" : {
 			required : true,

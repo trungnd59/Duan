@@ -71,21 +71,21 @@
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<label>Phòng ban</label>
-							<form:select class="form-control" path="depart.id">							
+							<form:select class="form-control" path="depart.id">
 								<form:options items="${listDepart}" itemValue="id"
 									itemLabel="tenphongban" />
 							</form:select>
 						</div>
 						<div class="col-md-3 form-group selectFormAddUser">
 							<label>Chức vụ</label>
-							<form:select class="form-control" path="chucvu.id">						
+							<form:select class="form-control" path="chucvu.id">
 								<form:options items="${chucvuList}" itemValue="id"
 									itemLabel="tenchucvu" />
 							</form:select>
 						</div>
 						<div class="col-md-6">
 							<button type="submit" class="btn btn-info">
-								<i class="fa fa-plus"></i>&nbsp; Xác nhận
+								<i class="fa fa-pencil"></i>&nbsp; Xác nhận
 							</button>
 							<a href="#" class="btn btn-secondary" onclick="history.back();">
 								<i class="fa fa-ban"></i>&nbsp; Hủy

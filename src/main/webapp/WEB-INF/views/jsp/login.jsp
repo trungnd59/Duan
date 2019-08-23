@@ -17,8 +17,6 @@
 
 <script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
 
-<script src="<c:url value="/themes/js/additionals.js" />"></script>
-
 <meta charset="UTF-8">
 <title>login</title>
 </head>

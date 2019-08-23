@@ -20,11 +20,11 @@
 					<form:hidden path="id" />
 					<div class="col-md-3 form-group">
 						<label>Username</label>
-						<form:input class="form-control" path="username" disabled="true"/>
+						<form:input class="form-control" path="username" readonly="true"/>
 					</div>
 					<div class="col-md-3 form-group">
 						<label>Full name</label>
-						<form:input class="form-control" path="fullname" disabled="true"/>
+						<form:input class="form-control" path="fullname" readonly="true"/>
 					</div>
 					<div class="col-md-3 form-group selectFormAddUser">
 						<label>Kích hoạt</label>
@@ -35,9 +35,14 @@
 					</div>
 					<form:hidden path="gender" />
 					<form:hidden path="password" />
+					<form:hidden path="ngaysinh" />
+					<form:hidden path="salary" />
+					<form:hidden path="address" />
+						<form:hidden path="phone" />
+					<form:hidden path="email" />
 					<div class="col-md-3">
 						<button type="submit" class="btn btn-info">
-							<i class="fa fa-plus"></i>&nbsp; Xác nhận
+							<i class="fa fa-pencil"></i>&nbsp; Xác nhận
 						</button>
 						<a href="#" class="btn btn-secondary" onclick="history.back();">
 							<i class="fa fa-ban"></i>&nbsp; Quay lại

@@ -10,19 +10,15 @@
 <script src="<c:url value="/themes/js/datatables.min.js" />"></script>
 <link href="<c:url value="/themes/css/datatables.min.css" />"
 	rel="stylesheet">
-<%-- <link href="<c:url value="/themes/css/validate.css" />" rel="stylesheet"> --%>
 <link href="<c:url value="/themes/css/bootstrap.min.css" />"
 	rel="stylesheet">
 <link
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	rel="stylesheet">
 <link href="<c:url value="/themes/css/style.css" />" rel="stylesheet">
-
 <script src="<c:url value="/themes/js/jquery.validate.min.js" />"></script>
-<script src="<c:url value="/themes/js/additionals.js" />"></script>
 </head>
 <body>
-
 	<c:url value="../admin" var="urlAdmin" />
 	<div class="sidenav">
 		<form class="form-inline my-2 my-lg-0"

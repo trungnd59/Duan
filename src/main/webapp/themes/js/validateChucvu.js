@@ -12,9 +12,6 @@ jQuery.validator.setDefaults({
 	}
 });
 $("#validatechucvu").validate({
-	onfocusout : false,
-	onkeyup : false,
-	onclick : false,
 	rules : {
 		"tenchucvu" : {
 			required : true,
